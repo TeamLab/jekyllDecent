@@ -3,7 +3,6 @@ layout:    about
 permalink: "/about"
 author:    teamlab
 keywords:  about person demo example
-title:     About TEAMLAB
 menutitle: About
 weight:    90
 excerpt:   This page contains the curriculum vitae (CV) of the author.
