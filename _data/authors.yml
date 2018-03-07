@@ -1,6 +1,6 @@
 default:                                                      # Fallback if nothing is specified
   initial:      teamlab                                       # used for author lookup in posts and for first two characters in the about page back button
-  name:         "TEAMLAB"                               # used to display author name
+  name:                                        # used to display author name
   cover:        /assets/test.jpg        # OPTIONAL: defines location of cover image in about page
   picture:      /assets/teamlab.jpg                           # OPTIONAL: author picture
   bio:                                                        # OPTIONAL: text below author name in posts
