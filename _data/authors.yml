@@ -6,7 +6,7 @@ default:                                                      # Fallback if noth
   bio:                                                        # OPTIONAL: text below author name in posts
   location:     Korea                                       # OPTIONAL: used to display location of the author
   website:      "http://theteamlab.io/"                    						  # OPTIONAL: link to the author of a post
-  email:        "sc82.choi@gachon.ac.kr"                                              # OPTIONAL: used in the about page
+  email:        "teamlab.gachon@gmail.com"                                              # OPTIONAL: used in the about page
   twitter:                                                    # OPTIONAL: used in the about page
   linkedin:                                                   # OPTIONAL: used in the about page
   xing:                                                       # OPTIONAL: used in the about page
@@ -23,6 +23,8 @@ default:                                                      # Fallback if noth
   twitch:                                                     # OPTIONAL: used in the about page
   s500px:                                                     # OPTIONAL: used in the about page
   reddit:                                                     # OPTIONAL: used in the about page
+
+
 teamlab:
   initial:      teamlab
   name:         ""
@@ -30,9 +32,11 @@ teamlab:
   picture:      /assets/teamlab.jpg
   bio:
   location:     Korea
-  email:        "sc82.choi@gachon.ac.kr"
+  email:        "teamlab.gachon@gmail.com"
   twitter:
   twitch:
+
+
 kimjeyoung:
   initial:      kimjeyoung
   name:         "Jaeyoung Kim"
@@ -40,5 +44,90 @@ kimjeyoung:
   bio:          Researcher of Teamlab
   location:     Korea
   website:      "https://kimjeyoung.github.io/about"
+  twitter:
+  github:
+
+
+kimjihee:
+  initial:      kimjihee
+  name:         "Jihee Kim"
+  picture:      /assets/jihee.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+kimjinhong:
+  initial:      kimjinhong
+  name:         "Jinhong Kim"
+  picture:      /assets/jinhong.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+leehyunju:
+  initial:      leehyunju
+  name:         "Hyunju Lee"
+  picture:
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+choiseokkyu:
+  initial:      choiseokkyu
+  name:         "Seokkyu Choi"
+  picture:      /assets/seokkyu.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+jangyehoon:
+  initial:      jangyehoon
+  name:         "Yehoon Jang"
+  picture:      /assets/yehoon.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+jinhyundu:
+  initial:      jinhyundu
+  name:         "Hyundu Jin"
+  picture:      /assets/hyundu.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+jeonhongjoon:
+  initial:      jeonhongjoon
+  name:         "Hongjoon Jeon"
+  picture:      /assets/hongjoon.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+kimyoonjin:
+  initial:      kimyoonjin
+  name:         "Yoonjin Kim"
+  picture:      /assets/yoonjin.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
   twitter:
   github:
