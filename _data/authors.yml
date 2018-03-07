@@ -25,7 +25,7 @@ default:                                                      # Fallback if noth
   reddit:                                                     # OPTIONAL: used in the about page
 teamlab:
   initial:      teamlab
-  name:         "TEAMLAB"
+  name:         ""
   cover:        /assets/test.jpg
   picture:      /assets/teamlab.jpg
   bio:
