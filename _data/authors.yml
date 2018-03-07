@@ -1,0 +1,133 @@
+default:                                                      # Fallback if nothing is specified
+  initial:      teamlab                                       # used for author lookup in posts and for first two characters in the about page back button
+  name:                                        # used to display author name
+  cover:        /assets/test.jpg        # OPTIONAL: defines location of cover image in about page
+  picture:      /assets/teamlab.jpg                           # OPTIONAL: author picture
+  bio:                                                        # OPTIONAL: text below author name in posts
+  location:     Korea                                       # OPTIONAL: used to display location of the author
+  website:      "http://theteamlab.io/"                    						  # OPTIONAL: link to the author of a post
+  email:        "teamlab.gachon@gmail.com"                                              # OPTIONAL: used in the about page
+  twitter:                                                    # OPTIONAL: used in the about page
+  linkedin:                                                   # OPTIONAL: used in the about page
+  xing:                                                       # OPTIONAL: used in the about page
+  github:       "https://github.com/teamlab"                                              # OPTIONAL: used in the about page
+  stackoverflow:                                              # OPTIONAL: used in the about page
+  facebook:                                                   # OPTIONAL: used in the about page
+  gplus:                                                      # OPTIONAL: used in the about page
+  soundcloud:                                                 # OPTIONAL: used in the about page
+  youtube:                                                    # OPTIONAL: used in the about page
+  pinterest:                                                  # OPTIONAL: used in the about page
+  dribble:                                                    # OPTIONAL: used in the about page
+  behance:                                                    # OPTIONAL: used in the about page
+  spotify:                                                    # OPTIONAL: used in the about page
+  twitch:                                                     # OPTIONAL: used in the about page
+  s500px:                                                     # OPTIONAL: used in the about page
+  reddit:                                                     # OPTIONAL: used in the about page
+
+
+teamlab:
+  initial:      teamlab
+  name:         ""
+  cover:        /assets/test.jpg
+  picture:      /assets/teamlab.jpg
+  bio:
+  location:     Korea
+  email:        "teamlab.gachon@gmail.com"
+  twitter:
+  twitch:
+
+
+kimjeyoung:
+  initial:      kimjeyoung
+  name:         "Jaeyoung Kim"
+  picture:      /assets/kimjeyoung.png
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:      "https://kimjeyoung.github.io/about"
+  twitter:
+  github:
+
+
+kimjihee:
+  initial:      kimjihee
+  name:         "Jihee Kim"
+  picture:      /assets/jihee.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+kimjinhong:
+  initial:      kimjinhong
+  name:         "Jinhong Kim"
+  picture:      /assets/jinhong.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+leehyunju:
+  initial:      leehyunju
+  name:         "Hyunju Lee"
+  picture:
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+choiseokkyu:
+  initial:      choiseokkyu
+  name:         "Seokkyu Choi"
+  picture:      /assets/seokkyu.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+jangyehoon:
+  initial:      jangyehoon
+  name:         "Yehoon Jang"
+  picture:      /assets/yehoon.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+
+jinhyundu:
+  initial:      jinhyundu
+  name:         "Hyundu Jin"
+  picture:      /assets/hyundu.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+jeonhongjoon:
+  initial:      jeonhongjoon
+  name:         "Hongjoon Jeon"
+  picture:      /assets/hongjoon.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
+
+kimyoonjin:
+  initial:      kimyoonjin
+  name:         "Yoonjin Kim"
+  picture:      /assets/yoonjin.jpg
+  bio:          Researcher of Teamlab
+  location:     Korea
+  website:
+  twitter:
+  github:
