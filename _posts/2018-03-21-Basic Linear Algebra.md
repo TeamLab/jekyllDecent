@@ -23,3 +23,27 @@ math:              true
    <img src="{{ "/media/img/Linear equation examples.png" | absolute_url }}" />
    <figcaption>Linear equation 예제</figcaption>
 </figure>
+
+#### System of Linear Equations
+같은 변수를 포함한 두 개 이상의 Linear Equations을 묶어 하나의 System으로 표현할 수 있습니다.  
+이 변수들을 미지수라고 하며, 주어진 Linear Equations을 모두 충족시키는 미지수를 해(Solution)라고 합니다.  
+또한 System의 해를 보다 쉽게 구하기 위해 각 방정식의 계수를 나열하여 표현하는 첨가 행렬(Augmented Matrix)에 대해 알앙보겠습니다.
+<figure>
+   <img src="{{ "/media/img/System of Linear Equations.png" | absolute_url }}" />
+   <figcaption>System of Linear Equations 예제</figcaption>
+</figure>
+그런데, 이 System은 해가 없을 수도 있고, 하나의 해를 갖거나 무수히 많은 해를 가질 수도 있습니다.  
+이 때 하나 이상의 해를 갖는 경우를 **Consistent**, 해가 없는 경우를 **inconsistent** 라고 합니다.
+
+<figure>
+   <img src="{{ "/media/img/consistent inconsistent 2d.png" | absolute_url }}" />
+   <figcaption>solutions in 2d</figcaption>
+</figure>
+<figure>
+   <img src="{{ "/media/img/consistent inconsistent 3d.png" | absolute_url }}" />
+   <figcaption>solutions in 3d</figcaption>
+</figure>
+
+#### How to solve a Linear System
+이렇게 Augmented Matirx로 표현하면 보다 쉽게 해를 구할 수 있습니다. 각 행에 세 가지 기본 연산을 통해 해를 구하는 방법과, 이를 응용한  
+가우스 소거법에 대해 알아보겠습니다.
