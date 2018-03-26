@@ -173,6 +173,7 @@ $ AB$를 연산하기 위해서는 **A의 열의 수와 B의 행의 수가 같�
 
 [대각합(Trace)](https://ko.wikipedia.org/wiki/%ED%96%89%EB%A0%AC#%EB%8C%80%EA%B0%81%ED%95%A9)의 경우 좀 더 이해하기 쉽습니다. 우선, Trace는 **Square Matrix에서만 정의**됩니다. 연산하는 방법은, 그냥 Square Matrix의 모든 대각원소들을 합해주면 됩니다.  
 Trace에 대해서도 몇 가지 특징이 있습니다.  
+
 1) $ tr(A^T) = tr(A) $
 2) $ tr(cA) = ctr(A) $` ` ` ` ` ` ` `  * *for some constant c*
 3) $ tr(A + B) = tr(B + A) $
