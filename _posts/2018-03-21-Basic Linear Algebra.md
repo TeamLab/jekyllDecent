@@ -61,10 +61,10 @@ Augmented Matrix로 표현된 상태에서 세 가지 종류의 행연산(Elemen
 행사다리꼴 행렬(Echelon Matrix)을 찾는 과정을 통해 해를 찾습니다.
 
 ##### *Three Elementary Row Operations*
-하나의 Linear system에 대해 세 가지 기본적인 행 연산을 수행할 수 있으며, 이 세 연산을 기본 행 연산(Elementary Row Operation)이라고 합니다. 세 연산은 아래와 같습니다.
-1) 한 행(Row)에 0이 아닌 상수를 곱하는 것
-2) 두 행의 위치를 바꾸는 것
-3) 한 행에 임의의 상수 k 를 곱해 다른 한 행에 더하는 것
+하나의 Linear system에 대해 세 가지 기본적인 행 연산을 수행할 수 있으며, 이 세 연산을 기본 행 연산(Elementary Row Operation)이라고 합니다. 세 연산은 아래와 같습니다.  
+1) 한 행(Row)에 0이 아닌 상수를 곱하는 것  
+2) 두 행의 위치를 바꾸는 것  
+3) 한 행에 임의의 상수 k 를 곱해 다른 한 행에 더하는 것  
 <figure>
    <img src="{{ "/media/img/Three Elementary Row Operations.png" | absolute_url }}" />
    <figcaption>Elementar Row Operations example</figcaption>
@@ -73,9 +73,9 @@ Augmented Matrix로 표현된 상태에서 세 가지 종류의 행연산(Elemen
 ##### *Echelon Matrix*
 세 기본 행 연산을 통해 행사다리꼴 행렬(Echelon Matrix) 또는 기약행사다리꼴 행렬(Reduced row Echelon Matrix)을 찾음으로써
 Linear System에 대한 해를 구할 수 있습니다.
-행사다리꼴 행렬이 되기 위한 조건은 다음과 같습니다.
-1) 원소가 모두 0인 행은 모두 밑바닥에 위치해야 한다.
-2) 원소가 모두 0이 아닌 행이 있다면, 그 행에서 0이 아닌 첫 번째 원소는 1이어야 한다. (이 때 첫 번째 원소 1을 Leading one이라고 한다.)
+행사다리꼴 행렬이 되기 위한 조건은 다음과 같습니다.  
+1) 원소가 모두 0인 행은 모두 밑바닥에 위치해야 한다.  
+2) 원소가 모두 0이 아닌 행이 있다면, 그 행에서 0이 아닌 첫 번째 원소는 1이어야 한다. (이 때 첫 번째 원소 1을 Leading one이라고 한다.)  
 3) 원소가 모두 0이 아닌 행들은 위아래로 맞붙어 있어야 하며, 이 때 위 쪽의 Leading One은 아래 쪽의 Leading One보다 왼 쪽에 위치해야 한다.
 
 위 세 조건을 만족하는 행렬을 행사다리꼴 행렬이라고 합니다. 여기에서 하나의 조건을 더 만족한다면 기약행사다리꼴 행렬이라고 표현합니다.
@@ -84,4 +84,13 @@ Linear System에 대한 해를 구할 수 있습니다.
 <figure>
    <img src="{{ "/media/img/Echelon Matrix.png" | absolute_url }}" />
    <figcaption>Echelon Matrix and Row Reduced Echelon Matrix</figcaption>
+</figure>
+
+##### *Gaussian Elimination(Gauss-Jordan Elimination)*
+이제 Linear system의 해를 구하기 위한 준비는 모두 끝났습니다. 우리가 해야 할 일은 Augmented Matrix로 표현된 linear system을  
+세 가지 기본 행 연산을 통해 행사다리꼴 행렬로 표현하기만 하면 됩니다. 이 때 행사다리꼴 형태로 표현하여 해를 찾는 것을 가우스 소거법(Gaussian Elimination), 기약행사다리꼴 형태로 표현하는 것을 가우스-조던 소거법(Gauss-Jordan Elimination)이라고 합니다.  
+가우스 소거법은 행렬식을 찾거나 역행렬을 찾을 때에도 유용하게 사용되므로 충분히 이해해야 합니다.
+<figure>
+   <img src="{{ "/media/img/Gaussian Elimination.png" | absolute_url }}" />
+   <figcaption>Gaussian Elimination example</figcaption>
 </figure>
