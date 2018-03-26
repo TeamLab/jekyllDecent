@@ -124,10 +124,10 @@ Identity Matrix는 행렬에서 곱셈의 항등원으로 사용되는 행렬이
 ##### *Addition, Subtraction and Scalar Product*
 **크기가 같은 행렬**이라면 같은 위치에 있는 원소끼리(Elementwise) 덧셈과 뺄셈 연산을 할 수 있습니다.  
 또한 행렬에 scalar를 곱하는 연산 역시 각 원소의 값에 scalar값을 곱하여 계산합니다. 이와 관련한 몇 가지 수학적 성질들은 다음과 같습니다.  
-1) $ A + B = B + A $
-2) $ (A + B) + C = A + (B + C) $
-3) $ (kl)A = k(lA) $` ` ` ` ` ` ` `  * *for some constant k and l*
-4) $ (k + l)A = kA + lA $` ` ` ` ` ` ` `  * *for some constant k and l*
+1) $ A + B = B + A $  
+2) $ (A + B) + C = A + (B + C) $  
+3) $ (kl)A = k(lA) $` ` ` ` ` ` ` `  * *for some constant k and l*  
+4) $ (k + l)A = kA + lA $` ` ` ` ` ` ` `  * *for some constant k and l*  
 5) $ k(A + B) = kA + kB $` ` ` ` ` ` ` `  * *for some constant k*
 <figure>
    <img src="{{ "/media/img/Addition Subtraction.png" | absolute_url }}" />
@@ -138,9 +138,9 @@ Identity Matrix는 행렬에서 곱셈의 항등원으로 사용되는 행렬이
 앞서 크기가 같은 행렬일 때에만 연산할 수 있는 덧셈, 뺄셈과 크기에 관계없이 연산할 수 있는 scalar곱 연산방법을 알아보았습니다.  
 행렬과 행렬을 곱하는 것은 지금까지의 연산 방법과는 조금 다릅니다. 우선, 행렬의 곱셈은 결합법칙은 성립하지만 **교환법칙은 성립하지 않습니다.**  
 즉, $ AB \neq BA $이며, 심지어 $ AB $는 존재하더라도, $ BA $는 정의되지 않을 수 있습니다. 이에 관한 몇 가지 성질들을 알아보겠습니다.  
-1) $ A(BC) = (AB)C $
-2) $ A(B + C) = AB + AC $
-3) $ (B + C)A = BA + CA $
+1) $ A(BC) = (AB)C $  
+2) $ A(B + C) = AB + AC $  
+3) $ (B + C)A = BA + CA $  
 4) $ k(AB) = (kA)B = A(kB) $` ` ` ` ` ` ` `  * *for some constant k*  
 
 $ AB$를 연산하기 위해서는 **A의 열의 수와 B의 행의 수가 같아야 합니다.** 또한 연산의 결과로 A의 행의 수와 B의 열의 수의 크기를 갖는 행렬이 반환됩니다.  
@@ -159,10 +159,10 @@ $ AB$를 연산하기 위해서는 **A의 열의 수와 B의 행의 수가 같�
 ##### *Transpose and Trace*
 행렬의 원소들의 위치를 이용한 두 가지 연산을 소개하겠습니다. [전치행렬(Transpose)](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%B9%98%ED%96%89%EB%A0%AC)은 앞서 공부한 Main Diagonal을 기준으로 행과 열을 바꾸는 연산입니다. 이렇게 행과 열의 바꾼 행렬을 전치행렬(Transposed Matrix)이라고 하며, 행렬 A에 대한 전치행렬은 $ A^T $로 표현합니다.  
 전치 연산에는 몇 가지 특징이 있습니다.  
-1) $ (M + N)^T = M^T + N^T $
-2) $ (cM)^T = cM^T $
-3) $ (M^T)^T = M $
-4) $ (MN)T = N^TM^T $
+1) $ (M + N)^T = M^T + N^T $  
+2) $ (cM)^T = cM^T $  
+3) $ (M^T)^T = M $  
+4) $ (MN)T = N^TM^T $  
 5) $ (M^T)^{-1} = (M^{-1})^T $` ` ` ` ` ` ` `  * *if $ M^{-1} exists*  
 
 특히 4), 5)의 경우 다양한 증명 등에 사용되므로, 익혀두는 것이 좋습니다.
@@ -173,9 +173,8 @@ $ AB$를 연산하기 위해서는 **A의 열의 수와 B의 행의 수가 같�
 
 [대각합(Trace)](https://ko.wikipedia.org/wiki/%ED%96%89%EB%A0%AC#%EB%8C%80%EA%B0%81%ED%95%A9)의 경우 좀 더 이해하기 쉽습니다. 우선, Trace는 **Square Matrix에서만 정의**됩니다. 연산하는 방법은, 그냥 Square Matrix의 모든 대각원소들을 합해주면 됩니다.  
 Trace에 대해서도 몇 가지 특징이 있습니다.  
-
-1) $ tr(A^T) = tr(A) $
-2) $ tr(cA) = ctr(A) $` ` ` ` ` ` ` `  * *for some constant c*
-3) $ tr(A + B) = tr(B + A) $
-4) $ tr(A - B) = tr(B - A) $
-5) $ tr(AB) = tr(BA) $
+1) $ tr(A^T) = tr(A) $  
+2) $ tr(cA) = ctr(A) $` ` ` ` ` ` ` `  * *for some constant c*  
+3) $ tr(A + B) = tr(B + A) $  
+4) $ tr(A - B) = tr(B - A) $  
+5) $ tr(AB) = tr(BA) $  
