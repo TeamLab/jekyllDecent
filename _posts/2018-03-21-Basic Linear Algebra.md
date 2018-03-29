@@ -178,3 +178,42 @@ Trace에 대해서도 몇 가지 특징이 있습니다.
 3) $ tr(A + B) = tr(B + A) $  
 4) $ tr(A - B) = tr(B - A) $  
 5) $ tr(AB) = tr(BA) $  
+
+##### *Inverse of matrix*
+앞서 곱셈의 항등원인 단위행렬(Identity Matrix)에 대해 배웠습니다. 실수 공간의 역수처럼 행렬에서도 단위행렬을 만들어 내는 역원을 [역행렬(Inverse Matrix)](https://ko.wikipedia.org/wiki/%EA%B0%80%EC%97%AD%ED%96%89%EB%A0%AC)이라고 합니다.  
+즉, $ AB = I_{n} $을 만족하는 B를 A의 역행렬이라고 부르며, A는 Invertible Matrix(가역행렬)라고 부릅니다. 역행렬은 다음의 세 가지 동치인 조건을 가지기 때문에 A를 B의 역행렬이라고도 할 수 있습니다.  
+1) $ AB = I_{n} $
+2) $ BA = I_{n} $
+3) $ AB = BA = I_{n} $  
+
+A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 같이 표현하며, 역행렬은 다음과 같은 성질들을 만족합니다.  
+1) $ (A^{-1})^{-1} = A $
+2) $ (kA)^{-1} = k^{-1}A^{-1} $` ` ` ` ` ` ` `  * *for some scalar k*
+3) $ (AB)^{-1} = B^{-1}A^{-1} $  
+
+이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
+
+우선, Square Matrix $ A = \begin{bmatrix}a & b\\c & d\end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
+$$ ad - bc \neq 0 $$  
+여기에서 $ ad - bc$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
+Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}{\begin{bmatrix}d & -b\\-c & a\end{bmatrix}} $  
+원소 a와 d의 위치를 바꾸고, b와 c에 -를 붙여주기만 하면 쉽게 구할 수 있습니다.
+
+<figure>
+   <img src="{{ "/media/img/Inverse of 2x2.png" | absolute_url }}" />
+   <figcaption>Inverse Matrix of 2x2 example </figcaption>
+</figure>  
+
+만약 2차원 Square Matrix A가 Invertible이라면, 다음과 같은 과정을 통해 Linear System의 해를 쉽게 구할 수 있습니다.  
+<figure>
+   <img src="{{ "/media/img/Find Solution by Inversion.png" | absolute_url }}" />
+   <figcaption>Find Solution by Inversion </figcaption>
+</figure>  
+
+2차원 Matrix의 역행렬은 이처럼 비교적 어렵지 않게 구할 수 있습니다. 그러나 3차원 이상의 Matrix의 역행렬을 구하는 것은 2차원 행렬의 역행렬을 구하는 것 만큼 쉽고 직관적이지 않습니다.  
+우선, 우리가 앞서 배운 Row Operations를 이용하여 역행렬을 구하는 방법을 배워보겠습니다.  
+특별히 다른 점은 없습니다. 우리가 구하고자 하는 행렬 A의 오른 쪽에 같은 차원의 Identity Matrix를 붙인 후, 구분이 쉽도록 |를 긋기만 하면 역행렬을 구할 준비가 끝난 것입니다. 이제 행렬 A에 대하여 Gauss-Jordan Elimination을 실행하여 행렬 A를 Identity Matrix로 만들면 됩니다.  
+<figure>
+   <img src="{{ "/media/img/Using Row Operations for inversion.png" | absolute_url }}" />
+   <figcaption>Find Inverse using Row Operations </figcaption>
+</figure>  
