@@ -1,7 +1,7 @@
 ---
 layout:            post
 title:             "Basic Linear Algebra"
-date:              2018-04-03 01:30:00 +0300
+date:              2018-04-03 20:30:00 +0300
 tags:              Basic Linear Algebra(SVD and Determinant over 3-Dimension)
 category:          Basics for ML / DL
 author:            jinhyundu
@@ -194,7 +194,8 @@ A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 �
 
 이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
 
-우선, Square Matrix $ A = \begin{bmatrix}
+우선, Square Matrix $ A =
+\begin{bmatrix}
 a & b\\
 c & d
 \end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
