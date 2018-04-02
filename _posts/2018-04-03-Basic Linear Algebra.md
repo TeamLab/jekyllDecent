@@ -197,7 +197,7 @@ A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 �
 우선, Square Matrix $ A =
 \left[
 \begin{array}{ccc}
-a & b \\
+a & b & \\
 c & d
 \end{array}
 \right]$가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
@@ -206,7 +206,7 @@ $$ ad - bc \neq 0 $$
 Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}
 \left[
 \begin{array}{ccc}
-d & -b \\
+d & -b & \\
 -c & a
 \end{array}
 \right] $  
