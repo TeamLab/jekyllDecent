@@ -13,9 +13,9 @@ math:              true
  또한 Deep Learning의 여러 Cost Function들과 Activation Function, 머신 러닝의 여러 알고리즘 작동 원리를 이해하기 위해서는 행렬과 벡터의 이해와 그 연산에 대한  
  이해가 필수적이라 생각되어 짧은 지식이나마 기록하여 정리하고자 합니다.
 
- #### What is Linear Equations?
+#### What is Linear Equations?
 
- $$ a_1x_1\,+\,a_2x_2\,+\,...\,+\,a_nx_n\,=\,b\;(a_1,\,a_2,\,...\,,\,a_n\,not\;all\;0)$$
+ $$a_1x_1\,+\,a_2x_2\,+\,...\,+\,a_nx_n\,=\,b\;(a_1,\,a_2,\,...\,,\,a_n\,not\;all\;0)$$
 
 선형식(Linear Equations)란, 1차항들의 다항 방정식을 의미합니다. 방정식의 최고차항은 1차항을 넘어서는 안 되며, $ xy, \, sinx,\, x^{1/2} $ 과 같은  
 비선형 항도 존재해서는 안 됩니다.
@@ -236,14 +236,14 @@ Determinant가 갖는 여러 성질들에 알아본 후 이를 쉽게 계산하�
 ##### *Minors and Cofactors*
 Determinant에 대해 배우기 전에 [Minor(소행렬)과 Cofactors(여인자)](https://ko.wikipedia.org/wiki/%EC%86%8C%ED%96%89%EB%A0%AC%EC%8B%9D)에 대해 먼저 알아보겠습니다. Minor는 행렬의 특정 한 행과 한 열을 제외한 나머지 행렬의 행렬식을 의미하며, i번째 행과 j번째 열을 제외한 나머지 행렬식을 $ M_{ij} $이라고 표현합니다.  
 <figure>
-   <img src="{{ "/media/img/Minor exampe.png" | absolute_url }}" />
-   <figcaption>Minor exampe </figcaption>
+   <img src="{{ "/media/img/Minor example.png" | absolute_url }}" />
+   <figcaption>Minor example </figcaption>
 </figure>  
 
 Cofactor는 Minor에 $(-1)^{i+j}$를 곱하면 된다. 즉, 행과 열을 뜻하는 i, j를 더해서 이 수가 짝수이면 더하고, 홀수이면 빼면 됩니다.  
 <figure>
-   <img src="{{ "/media/img/Cofactor exampe.png" | absolute_url }}" />
-   <figcaption>Cofactor exampe </figcaption>
+   <img src="{{ "/media/img/Cofactor example.png" | absolute_url }}" />
+   <figcaption>Cofactor example </figcaption>
 </figure>  
 
 Minor와 Cofactor에 대해 이해했다면, 이제 Cofactor를 이용하여 Determinant를 구하는 방법에 대해 알아보겠습니다. Minor와 Cofactor에 대해 잘 이해했다면, 이 계산식 역시 그리 어렵지 않게 느껴질 것입니다. Cofactor를 구할 때 행렬 내 하나의 원소를 기준으로 구했다는 것을 기억하고 계실 것입니다. Determinant를 구하는 것은 하나의 원소가 아니라 하나의 행 또는 열을 선택하여 해당 행, 열에 있는 모든 원소들의 Cofactor를 더함으로써 행렬식을 구할 수 있습니다. 이 과정을 [Cofactor expansion(여인자 전개) 혹은 Laplace expansion(라플라스 전개)](https://ko.wikipedia.org/wiki/%EB%9D%BC%ED%94%8C%EB%9D%BC%EC%8A%A4_%EC%A0%84%EA%B0%9C)이라고 합니다.  
