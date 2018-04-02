@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "How To Install ELK Stack On Ubuntu 16.04"
-date:
-tags:
+date: 2018-04-02 16:55:00 +0300
+tags: ELK Installation document
 category: Tutorials
 author: kimjinhong
 math: false
