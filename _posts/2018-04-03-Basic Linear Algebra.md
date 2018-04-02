@@ -128,7 +128,7 @@ Identity Matrix는 행렬에서 곱셈의 항등원으로 사용되는 행렬이
 2) $ (A + B) + C = A + (B + C) $  
 3) $ (kl)A = k(lA) $ &nbsp;  * *for some constant k and l*  
 4) $ (k + l)A = kA + lA $ &nbsp;  * *for some constant k and l*  
-5) $ k(A + B) = kA + kB $ &nbsp;  * *for some constant k*
+5) $ k(A + B) = kA + kB $ &nbsp;  * *for some constant k*  
 <figure>
    <img src="{{ "/media/img/Addition Subtraction.png" | absolute_url }}" />
    <figcaption>Elementwise operations</figcaption>
@@ -183,13 +183,13 @@ Trace에 대해서도 몇 가지 특징이 있습니다.
 ##### *Inverse of matrix*
 앞서 곱셈의 항등원인 단위행렬(Identity Matrix)에 대해 배웠습니다. 실수 공간의 역수처럼 행렬에서도 단위행렬을 만들어 내는 역원을 [역행렬(Inverse Matrix)](https://ko.wikipedia.org/wiki/%EA%B0%80%EC%97%AD%ED%96%89%EB%A0%AC)이라고 합니다.  
 즉, $ AB = I_{n} $을 만족하는 B를 A의 역행렬이라고 부르며, A는 Invertible Matrix(가역행렬)라고 부릅니다. 역행렬은 다음의 세 가지 동치인 조건을 가지기 때문에 A를 B의 역행렬이라고도 할 수 있습니다.  
-1) $ AB = I_{n} $
-2) $ BA = I_{n} $
+1) $ AB = I_{n} $  
+2) $ BA = I_{n} $  
 3) $ AB = BA = I_{n} $  
 
 A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 같이 표현하며, 역행렬은 다음과 같은 성질들을 만족합니다.  
-1) $ (A^{-1})^{-1} = A $
-2) $ (kA)^{-1} = k^{-1}A^{-1} $ &nbsp;  * *for some scalar k*
+1) $ (A^{-1})^{-1} = A $  
+2) $ (kA)^{-1} = k^{-1}A^{-1} $ &nbsp;  * *for some scalar k*  
 3) $ (AB)^{-1} = B^{-1}A^{-1} $  
 
 이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
@@ -229,11 +229,11 @@ Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을
 [Determinant(행렬식)](https://ko.wikipedia.org/wiki/%ED%96%89%EB%A0%AC%EC%8B%9D)이란 Square Matrix에서만 정의되는 개념으로, 행렬 A에 대한 행렬식은 $ det(A) $와 같이 표현합니다.  
 해당 행렬이 표현하는 Linear System이 유일한 해를 갖는지를 판단하기 위해 사용되지만 이외에도 해당 행렬의 [선형 변환](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%98%95_%EB%B3%80%ED%99%98)이 나타내는 부피 등 [다양한 기하학적 의미](https://wikidocs.net/4049)를 가지고 있으며, 이후에 배울 Eigenvalue(고유값)과 Eigenvector(고유 벡터)를 계산하는 데에도 사용되는 매우 중요한 함수입니다.  
 Determinant가 갖는 여러 성질들에 알아본 후 이를 쉽게 계산하는 방법에 대해 알아보겠습니다.  
-1) $ det_I = 1 $
-2) $ det(AB) = detA*detB $
-3) $ det(cA) = c^ndet(A) $ &nbsp;  * *for some constant c, n is size of matirx*
-4) $ detA^{-1} = (detA)^{-1} $
-5) $ detA^T = detA $
+1) $ det_I = 1 $  
+2) $ det(AB) = detA*detB $  
+3) $ det(cA) = c^ndet(A) $ &nbsp;  * *for some constant c, n is size of matirx*  
+4) $ detA^{-1} = (detA)^{-1} $  
+5) $ detA^T = detA $  
 
 ##### *Minors and Cofactors*
 Determinant에 대해 배우기 전에 [Minor(소행렬)과 Cofactors(여인자)](https://ko.wikipedia.org/wiki/%EC%86%8C%ED%96%89%EB%A0%AC%EC%8B%9D)에 대해 먼저 알아보겠습니다. Minor는 행렬의 특정 한 행과 한 열을 제외한 나머지 행렬의 행렬식을 의미하며, i번째 행과 j번째 열을 제외한 나머지 행렬식을 $ M_{ij} $이라고 표현합니다.  
