@@ -16,7 +16,7 @@ ELK Stack이란 사용자가 서버로부터 원하는 모든 유형의 데이�
 ELK는 Elastic search와 , Logstash 그리고 Kibana로 구성되어 있습니다.
 
 <figure>
-   <img src="{{ "/media/img/elk/work_flow.png" | absolute_url }}" />
+   <img src="{{ "/media/img/work_flow.png" | absolute_url }}" />
    <figcaption>ELK Work Flow</figcaption>
 </figure>
 
