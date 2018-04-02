@@ -195,13 +195,15 @@ A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 �
 이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
 
 우선, Square Matrix $ A =
-\begin{bmatrix}
+\left[\begin{matrix}
 a & b\\
 c & d
-\end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
+\end{matrix} \right]$가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
 $$ ad - bc \neq 0 $$  
 여기에서 $ ad - bc$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
-Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}{\begin{bmatrix}d & -b\\-c & a\end{bmatrix}} $  
+Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}
+\left[{\begin{matrix}d & -b\\
+-c & a\end{matrix}}\right] $  
 원소 a와 d의 위치를 바꾸고, b와 c에 -를 붙여주기만 하면 쉽게 구할 수 있습니다.
 
 <figure>
@@ -366,7 +368,7 @@ SVD를 배우기 전에 Matrix의 [Orthogonality(직교)](https://ko.wikipedia.o
 Eigenvector를 Left와 Right으로 나누어 부르는 것은 SVD를 수행할 때 Eigenvector들로 이루어진 Matrix의 위치 때문인데, 예시를 통해 설명하겠습니다.  
 
 <figure>
-    <img src="{{ "/media/img/SVD.png" | absolute_url }}" />
+    <img src="{{ "/media/img/SVD example.png" | absolute_url }}" />
     <figcaption>SVD example</figcaption>
 </figure>  
 
