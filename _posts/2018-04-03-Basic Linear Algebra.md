@@ -196,7 +196,7 @@ A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 �
 
 우선, Square Matrix $ A =
 \left[
-\begin{array}
+\begin{array}{ccc}
 a & b \\
 c & d
 \end{array}
@@ -205,7 +205,7 @@ $$ ad - bc \neq 0 $$
 여기에서 $ ad - bc$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
 Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}
 \left[
-\begin{array}
+\begin{array}{ccc}
 d & -b \\
 -c & a
 \end{array}
