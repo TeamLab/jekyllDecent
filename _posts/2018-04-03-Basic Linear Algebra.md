@@ -1,7 +1,7 @@
 ---
 layout:            post
 title:             "Basic Linear Algebra"
-date:              2018-03-21 20:30:00 +0300
+date:              2018-04-03 01:30:00 +0300
 tags:              Basic Linear Algebra(SVD and Determinant over 3-Dimension)
 category:          Basics for ML / DL
 author:            jinhyundu
@@ -194,7 +194,10 @@ A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 �
 
 이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
 
-우선, Square Matrix $ A = \begin{bmatrix}a & b\\c & d\end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
+우선, Square Matrix $ A = \begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
 $$ ad - bc \neq 0 $$  
 여기에서 $ ad - bc$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
 Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}{\begin{bmatrix}d & -b\\-c & a\end{bmatrix}} $  
@@ -363,7 +366,7 @@ Eigenvector를 Left와 Right으로 나누어 부르는 것은 SVD를 수행할 �
 
 <figure>
     <img src="{{ "/media/img/SVD.png" | absolute_url }}" />
-    <figcaption>Singular Vector Decomposition example</figcaption>
+    <figcaption>SVD example</figcaption>
 </figure>  
 
 Left Singular Vecotor들이 $\sum$의 왼 쪽에 위치하고, Right Singular Vecotor들이 오른 쪽에 위치하는 것을 볼 수 있습니다. 여기에서 U와 V는 Orthogonal Matrix이므로, $A = U \sum V^T$는 $\sum = U^TAV$와 같이 표현할 수 있습니다.  
