@@ -16,7 +16,7 @@ baseurl:          "/jekyllDecent" # the subpath of your site, e.g. /blog
 url:              "" # the base hostname & protocol for your site. Have a look at robots.txt as well!
 permalink:        /blog/:categories/:title
 cover:            /assets/test.jpg
-disqus_shortname: "TeamLab"
+disqus_shortname: "TEAMLAB_BLOG"
 
 # Build settings
 sass:
