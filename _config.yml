@@ -40,3 +40,6 @@ compress_html:
     envs: [local]
   blanklines: true
   startings: [head, body]
+
+
+discus: teamlab
