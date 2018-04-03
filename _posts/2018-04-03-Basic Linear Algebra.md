@@ -6,6 +6,8 @@ tags:              Basic Linear Algebra(SVD and Determinant over 3-Dimension)
 category:          Basics for ML / DL
 author:            jinhyundu
 math:              true
+published:         true
+comments:          true
 ---
 
  데이터를 컴퓨터에서 다루기 위해서 보통 데이터프레임 형태를 많이 사용합니다. 데이터프레임 형태는 Matrix와 비슷하게 여러 Rows와 Columns로 이루어져 있으며,  
