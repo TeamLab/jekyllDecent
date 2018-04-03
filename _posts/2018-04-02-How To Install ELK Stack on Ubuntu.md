@@ -6,8 +6,6 @@ tags: ELK Installation document
 category: Tutorials
 author: kimjinhong
 math: false
-published:         true
-comments:          true
 ---
 
 이번 포스팅에서는 로그 수집 및 분석에 용이한 도구인 ELK Stack 구축 방법에 대해 설명하도록 하겠습니다.
