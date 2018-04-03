@@ -6,7 +6,6 @@ tags:              Basic Linear Algebra(SVD and Determinant over 3-Dimension)
 category:          Basics for ML / DL
 author:            jinhyundu
 math:              true
-published:         true
 comments:          true
 ---
 
