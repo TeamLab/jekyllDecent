@@ -1,11 +1,12 @@
 ---
 layout:            post
 title:             "Basic Linear Algebra"
-date:              2018-03-21 20:30:00 +0300
+date:              2018-04-03 20:30:00 +0300
 tags:              Basic Linear Algebra(SVD and Determinant over 3-Dimension)
 category:          Basics for ML / DL
 author:            jinhyundu
 math:              true
+comments:          true
 ---
 
  데이터를 컴퓨터에서 다루기 위해서 보통 데이터프레임 형태를 많이 사용합니다. 데이터프레임 형태는 Matrix와 비슷하게 여러 Rows와 Columns로 이루어져 있으며,  
@@ -13,9 +14,9 @@ math:              true
  또한 Deep Learning의 여러 Cost Function들과 Activation Function, 머신 러닝의 여러 알고리즘 작동 원리를 이해하기 위해서는 행렬과 벡터의 이해와 그 연산에 대한  
  이해가 필수적이라 생각되어 짧은 지식이나마 기록하여 정리하고자 합니다.
 
- #### What is Linear Equations?
+#### What is Linear Equations?
 
- $$ a_1x_1\,+\,a_2x_2\,+\,...\,+\,a_nx_n\,=\,b\;(a_1,\,a_2,\,...\,,\,a_n\,not\;all\;0)$$
+ $$a_1x_1\,+\,a_2x_2\,+\,...\,+\,a_nx_n\,=\,b\;(a_1,\,a_2,\,...\,,\,a_n\,not\;all\;0)$$
 
 선형식(Linear Equations)란, 1차항들의 다항 방정식을 의미합니다. 방정식의 최고차항은 1차항을 넘어서는 안 되며, $ xy, \, sinx,\, x^{1/2} $ 과 같은  
 비선형 항도 존재해서는 안 됩니다.
@@ -128,7 +129,7 @@ Identity Matrix는 행렬에서 곱셈의 항등원으로 사용되는 행렬이
 2) $ (A + B) + C = A + (B + C) $  
 3) $ (kl)A = k(lA) $ &nbsp;  * *for some constant k and l*  
 4) $ (k + l)A = kA + lA $ &nbsp;  * *for some constant k and l*  
-5) $ k(A + B) = kA + kB $ &nbsp;  * *for some constant k*
+5) $ k(A + B) = kA + kB $ &nbsp;  * *for some constant k*  
 <figure>
    <img src="{{ "/media/img/Addition Subtraction.png" | absolute_url }}" />
    <figcaption>Elementwise operations</figcaption>
@@ -183,21 +184,23 @@ Trace에 대해서도 몇 가지 특징이 있습니다.
 ##### *Inverse of matrix*
 앞서 곱셈의 항등원인 단위행렬(Identity Matrix)에 대해 배웠습니다. 실수 공간의 역수처럼 행렬에서도 단위행렬을 만들어 내는 역원을 [역행렬(Inverse Matrix)](https://ko.wikipedia.org/wiki/%EA%B0%80%EC%97%AD%ED%96%89%EB%A0%AC)이라고 합니다.  
 즉, $ AB = I_{n} $을 만족하는 B를 A의 역행렬이라고 부르며, A는 Invertible Matrix(가역행렬)라고 부릅니다. 역행렬은 다음의 세 가지 동치인 조건을 가지기 때문에 A를 B의 역행렬이라고도 할 수 있습니다.  
-1) $ AB = I_{n} $
-2) $ BA = I_{n} $
+1) $ AB = I_{n} $  
+2) $ BA = I_{n} $  
 3) $ AB = BA = I_{n} $  
 
 A가 Invertible Matrix(가역행렬)일 때, A의 역행렬 B를 $ A^{-1} $과 같이 표현하며, 역행렬은 다음과 같은 성질들을 만족합니다.  
-1) $ (A^{-1})^{-1} = A $
-2) $ (kA)^{-1} = k^{-1}A^{-1} $ &nbsp;  * *for some scalar k*
+1) $ (A^{-1})^{-1} = A $  
+2) $ (kA)^{-1} = k^{-1}A^{-1} $ &nbsp;  * *for some scalar k*  
 3) $ (AB)^{-1} = B^{-1}A^{-1} $  
 
 이제, 2x2 매트릭스의 역행렬을 구하는 방법을 시작으로, 앞서 공부했던 Row Operations를 통해 3차원 이상의 역행렬을 구하는 방법도 알아보겠습니다.  
 
-우선, Square Matrix $ A = \begin{bmatrix}a & b\\c & d\end{bmatrix} $가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
-$$ ad - bc \neq 0 $$  
-여기에서 $ ad - bc$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
-Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  $ A^{-1} = \frac{1}{(ad - bc)}{\begin{bmatrix}d & -b\\-c & a\end{bmatrix}} $  
+우선, Square Matrix $$A=\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$가 Ivertible Matrix가 되기 위해서, 다음과 같은 조건을 만족해야 합니다.  
+$ad - bc \neq 0$  
+여기에서 $$ ad - bc$$를 A의 Determinant(행렬식)이라고 하며, Determinant는 행렬에서 매우 중요한 개념이므로, 다음 장에 자세하게 기술하겠습니다.  
+Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을 쉽게 구할 수 있습니다.  
+$$A^{-1} = \frac{1}{(ad - bc)}\begin{bmatrix}d & -b \\
+-c & a \end{bmatrix}$$  
 원소 a와 d의 위치를 바꾸고, b와 c에 -를 붙여주기만 하면 쉽게 구할 수 있습니다.
 
 <figure>
@@ -223,23 +226,23 @@ Sqaure Matrix가 조건을 만족한다면, 2차원 행렬에서는 역행렬을
 [Determinant(행렬식)](https://ko.wikipedia.org/wiki/%ED%96%89%EB%A0%AC%EC%8B%9D)이란 Square Matrix에서만 정의되는 개념으로, 행렬 A에 대한 행렬식은 $ det(A) $와 같이 표현합니다.  
 해당 행렬이 표현하는 Linear System이 유일한 해를 갖는지를 판단하기 위해 사용되지만 이외에도 해당 행렬의 [선형 변환](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%98%95_%EB%B3%80%ED%99%98)이 나타내는 부피 등 [다양한 기하학적 의미](https://wikidocs.net/4049)를 가지고 있으며, 이후에 배울 Eigenvalue(고유값)과 Eigenvector(고유 벡터)를 계산하는 데에도 사용되는 매우 중요한 함수입니다.  
 Determinant가 갖는 여러 성질들에 알아본 후 이를 쉽게 계산하는 방법에 대해 알아보겠습니다.  
-1) $ det_I = 1 $
-2) $ det(AB) = detA*detB $
-3) $ det(cA) = c^ndet(A) $ &nbsp;  * *for some constant c, n is size of matirx*
-4) $ detA^{-1} = (detA)^{-1} $
-5) $ detA^T = detA $
+1) $ det_I = 1 $  
+2) $ det(AB) = detA*detB $  
+3) $ det(cA) = c^ndet(A) $ &nbsp;  * *for some constant c, n is size of matirx*  
+4) $ detA^{-1} = (detA)^{-1} $  
+5) $ detA^T = detA $  
 
 ##### *Minors and Cofactors*
 Determinant에 대해 배우기 전에 [Minor(소행렬)과 Cofactors(여인자)](https://ko.wikipedia.org/wiki/%EC%86%8C%ED%96%89%EB%A0%AC%EC%8B%9D)에 대해 먼저 알아보겠습니다. Minor는 행렬의 특정 한 행과 한 열을 제외한 나머지 행렬의 행렬식을 의미하며, i번째 행과 j번째 열을 제외한 나머지 행렬식을 $ M_{ij} $이라고 표현합니다.  
 <figure>
-   <img src="{{ "/media/img/Minor exampe.png" | absolute_url }}" />
-   <figcaption>Minor exampe </figcaption>
+   <img src="{{ "/media/img/Minor example.png" | absolute_url }}" />
+   <figcaption>Minor example </figcaption>
 </figure>  
 
 Cofactor는 Minor에 $(-1)^{i+j}$를 곱하면 된다. 즉, 행과 열을 뜻하는 i, j를 더해서 이 수가 짝수이면 더하고, 홀수이면 빼면 됩니다.  
 <figure>
-   <img src="{{ "/media/img/Cofactor exampe.png" | absolute_url }}" />
-   <figcaption>Cofactor exampe </figcaption>
+   <img src="{{ "/media/img/Cofactor example.png" | absolute_url }}" />
+   <figcaption>Cofactor example </figcaption>
 </figure>  
 
 Minor와 Cofactor에 대해 이해했다면, 이제 Cofactor를 이용하여 Determinant를 구하는 방법에 대해 알아보겠습니다. Minor와 Cofactor에 대해 잘 이해했다면, 이 계산식 역시 그리 어렵지 않게 느껴질 것입니다. Cofactor를 구할 때 행렬 내 하나의 원소를 기준으로 구했다는 것을 기억하고 계실 것입니다. Determinant를 구하는 것은 하나의 원소가 아니라 하나의 행 또는 열을 선택하여 해당 행, 열에 있는 모든 원소들의 Cofactor를 더함으로써 행렬식을 구할 수 있습니다. 이 과정을 [Cofactor expansion(여인자 전개) 혹은 Laplace expansion(라플라스 전개)](https://ko.wikipedia.org/wiki/%EB%9D%BC%ED%94%8C%EB%9D%BC%EC%8A%A4_%EC%A0%84%EA%B0%9C)이라고 합니다.  
@@ -362,8 +365,8 @@ SVD를 배우기 전에 Matrix의 [Orthogonality(직교)](https://ko.wikipedia.o
 Eigenvector를 Left와 Right으로 나누어 부르는 것은 SVD를 수행할 때 Eigenvector들로 이루어진 Matrix의 위치 때문인데, 예시를 통해 설명하겠습니다.  
 
 <figure>
-    <img src="{{ "/media/img/SVD.png" | absolute_url }}" />
-    <figcaption>Singular Vector Decomposition example</figcaption>
+    <img src="{{ "/media/img/SVD example.png" | absolute_url }}" />
+    <figcaption>SVD example</figcaption>
 </figure>  
 
 Left Singular Vecotor들이 $\sum$의 왼 쪽에 위치하고, Right Singular Vecotor들이 오른 쪽에 위치하는 것을 볼 수 있습니다. 여기에서 U와 V는 Orthogonal Matrix이므로, $A = U \sum V^T$는 $\sum = U^TAV$와 같이 표현할 수 있습니다.  

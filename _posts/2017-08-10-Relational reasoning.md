@@ -6,6 +6,8 @@ tags:              A simple neural network module for relational reasoning
 category:          Deep Learning paper review
 author:            kimjeyoung
 math:              true
+published:         true
+comments:          true
 ---
 
 논문 출처 : https://arxiv.org/pdf/1706.01427.pdf
