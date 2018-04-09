@@ -10,13 +10,13 @@ title:            TEAMLAB
 subtitle:         Human knowledge belongs to the world .  -AntiTrust
 description:      This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.
 keywords:         teamlab
-language:         "" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
+language:         "ko" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
 baseurl:          "/jekyllDecent" # the subpath of your site, e.g. /blog
 url:              "" # the base hostname & protocol for your site. Have a look at robots.txt as well!
 permalink:        /blog/:categories/:title
 cover:            /assets/test.jpg
-disqus_shortname: "jekylldecent"
+disqus_shortname: "teamlab-5"
 
 # Build settings
 sass:
