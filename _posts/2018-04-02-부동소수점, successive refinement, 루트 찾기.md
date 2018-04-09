@@ -1,9 +1,9 @@
 ---
 layout:            post
-title:             "부동소수점, successive refinement, 루트 찾기"
+title:             "(5) 부동소수점, successive refinement, 루트 찾기"
 date:              2018-04-02 13:10:00 +0300
 tags:              MIT
-category:          Introduction to Computer Science and Programming in Python
+category:          MIT - Introduction to Computer Science and Programming in Python
 author:            kimyoonjin
 math:              true
 published:         true

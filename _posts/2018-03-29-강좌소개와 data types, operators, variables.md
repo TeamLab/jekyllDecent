@@ -1,9 +1,9 @@
 ---
 layout:            post
-title:             " 강좌소개와 data types, operators, variables"
+title:             "(1) 강좌소개와 data types, operators, variables"
 date:              2018-03-29 13:10:00 +0300
 tags:              MIT
-category:          Introduction to Computer Science and Programming in Python
+category:          MIT - Introduction to Computer Science and Programming in Python
 author:            kimyoonjin
 math:              true
 published:         true
