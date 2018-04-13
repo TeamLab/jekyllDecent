@@ -1,11 +1,13 @@
 ---
 layout:            post
-title:             "부동소수점, successive refinement, 루트 찾기"
+title:             "(5) 부동소수점, successive refinement, 루트 찾기"
 date:              2018-04-02 13:10:00 +0300
 tags:              MIT
-category:          Introduction to Computer Science and Programming in Python
+category:          MIT - Introduction to Computer Science and Programming in Python
 author:            kimyoonjin
 math:              true
+published:         true
+comments:          true
 ---
 # [MIT - Introduction to Computer Science and Programming in Python](https://www.inflearn.com/course/mit-%EA%B3%B5%EA%B0%9C%EA%B0%95%EC%A2%8C-python/)  
 이 강의는 2008년에 개설된 강의로, 현재로부터 10년전 버전의 파이썬으로 진행되고 있다.  
