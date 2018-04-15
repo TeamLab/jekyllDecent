@@ -97,7 +97,7 @@ NameError: name 'raw_input' is not defined
 1. 리스트는 변경할 수 있다.
 2. 값은 char타입이 될 필요가 없다.
 
-e.g.1) list
+e.g.1) 리스트의 가변성
 ```
 >>> techs = ['MIT','Cal Techs']
 >>> ivys = ['Havard','Yale','Brown']
