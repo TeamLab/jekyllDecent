@@ -1,6 +1,6 @@
 ---
 layout:            post
-title:             "Object Detection Tutorial"
+title:             "Object Detection Tutorial(1)"
 date:              2018-04-18 15:30:00 +0300
 tags:              Object Detection
 category:          Object Detection
@@ -105,4 +105,5 @@ Detection 출력 화면
   <img src="{{ "/media/img/OD_example.png" | absolute_url }}"/>
 </figure>  
 
-이상으로 포스팅을 마치도록 하겠습니다.
+이번 포스팅에서는 Google Object Detection API의 소개와 사용법에 대해 알아보았습니다.  
+이상으로 포스팅을 마치며 다음 포스팅에서는 Object Detection API를 이용하여 모델을 학습하는 방법에 대해 설명 드리도록 하겠습니다.
