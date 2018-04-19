@@ -3,7 +3,7 @@ layout:            post
 title:             "Object Detection Tutorial"
 date:              2018-04-18 15:30:00 +0300
 tags:              Object Detection
-category:          Object Detection Tutorial
+category:          Object Detection
 author:            choiseokkyu
 math:              true
 published:         true
@@ -96,14 +96,13 @@ models/research/object_detection/[object_detection_tutorial.ipynb](https://githu
  - PATH_TO_TEST_IMAGES_DIR를 수정하여 원하는 폴더에 이미지를 넣어서 Detectiond르 실행할 수 있으며 IMAGE_SIZE를 수정하여 출력되는 이미지의 크기도 조절이 가능합니다.
  - Jupyter 상에서 이미지를 출력해주는 plt.imshow()코드 대신에 scipy.misc.imsave()를 사용하면 Detection된 이미지를 로컬에 저장할 수 있습니다.  
 
-  
 
-실행화면
+
+Detection 출력 화면
 
 
 <figure>
   <img src="{{ "/media/img/OD_example.png" | absolute_url }}"/>
 </figure>  
 
-이번 포스팅에서는 Google Object Detection API의 소개와 사용법에 대해 알아보았습니다.  
-다음 포스팅은 Object Detection API를 사용하여 모델을 학습하는 방법에 대해 다루도록 하겠습니다.
+이상으로 포스팅을 마치도록 하겠습니다.
