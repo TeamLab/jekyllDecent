@@ -4,7 +4,7 @@ title: Kaggle "What's cooking" data 로 Word2vec 연습하기
 date: 2018-05-03 21:00:00 +0300
 tags: Word2Vec
 category: Tutorials
-author: kjihee
+author: kimjihee
 math: false
 published:         true
 comments:          true
@@ -257,8 +257,6 @@ model.most_similar(u"sausage")
  ('garlic and herb seasoning', 0.9130542278289795)]
  ```
  sausage와 가장 유사한 10개의 단어를 추출한 결과 ham, pork sausage, chuck 등 꽤 유사한 단어가 나오는 것을 확인할 수 있습니다.
-
-
 
 
  ## t-SNE를 이용한 시각화
