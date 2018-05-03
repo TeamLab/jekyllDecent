@@ -4,7 +4,7 @@ title: Kaggle "What's cooking" data 로 Word2vec 연습하기
 date: 2018-05-03 21:00:00 +0300
 tags: Word2Vec
 category: Tutorials
-author: Kimjihee
+author: kjihee
 math: false
 published:         true
 comments:          true
@@ -298,6 +298,12 @@ plt.show()
    <img src="{{ "/media/img/word2vec_100.png" | absolute_url }}" />
    <figcaption>100words_whats_cooking</figcaption>
 </figure>
+
+
+
+이번 포스팅에선 kaggle data를 간단하게 전처리 과정을 거쳐 gensim 의 word2vec을 이용하여 embedding vector를 만드는 과정에 대해 작성하였습니다.
+
+다음 포스팅에선 facebook의 fasttext를 다뤄보도록 하겠습니다.
 
 #### reference
 
