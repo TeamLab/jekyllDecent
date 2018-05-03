@@ -259,7 +259,7 @@ model.most_similar(u"sausage")
  sausage와 가장 유사한 10개의 단어를 추출한 결과 ham, pork sausage, chuck 등 꽤 유사한 단어가 나오는 것을 확인할 수 있습니다.
 
 
- ## t-SNE를 이용한 시각화
+## t-SNE를 이용한 시각화
 
  t-SNE 는 고차원의 데이터를 2차원으로 차원을 감소시키는 방법입니다.
  모델링 단계에서 300차원으로 설정한 '300feature_3min_model' 을 2차원의 그래프 형태로 시각화시키는 방법은 다음과 같습니다.
