@@ -33,8 +33,10 @@ what's cooking 의 train data는 다음과 같은 형식으로 주어집니다.
     "spinach",
     "sweet potatoes"
 ]
-},  ```
+},
+```
 pandas 라이브러리를 이용해 DataFrame 으로 만든 뒤 데이터의 끝에서부터 3rows 만 살펴보면 다음과 같습니다
+
 ```python
 import pandas as pd
 import numpy as np
@@ -44,12 +46,13 @@ data=pd.read_json("train.json")
 df = pd.DataFrame(data)
 df.tail(3)
 ```
+<table>
 |cuisine| id  |                                                                                                                                                                              ingredients                                                                                                                                                                               |
 |-------|----:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |irish  | 2238|['eggs', 'citrus fruit', 'raisins', 'sourdough starter', 'flour', 'hot tea', 'sugar', 'ground nutmeg', 'salt', 'ground cinnamon', 'milk', 'butter']                                                                              |
 |chinese|41882|['boneless chicken skinless thigh', 'minced garlic', 'steamed white rice', 'baking powder', 'corn starch', 'dark soy sauce', 'kosher salt', 'peanuts', 'flour', 'scallions', 'Chinese rice vinegar', 'vodka', 'fresh ginger', 'egg whites', 'broccoli', 'toasted sesame seeds', 'sugar', 'store bought low sodium chicken stock', 'baking soda', 'Shaoxing wine', 'oil']|
 |mexican| 2362|['green chile', 'jalapeno chilies', 'onions', 'ground black pepper', 'salt', 'chopped cilantro fresh', 'green bell pepper', 'garlic', 'white sugar', 'roma tomatoes', 'celery', 'dried oregano']|
-각 row의 ingredients list 의 elements 갯수가 각각 다르고 대문자와 소문자가 섞여 있습니다.
+</table>
 
 이번에는 각 cuisine의 갯수의 분포를 알아보겠습니다.
 
