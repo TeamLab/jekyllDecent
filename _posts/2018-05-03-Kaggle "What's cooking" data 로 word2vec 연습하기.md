@@ -46,13 +46,13 @@ data=pd.read_json("train.json")
 df = pd.DataFrame(data)
 df.tail(3)
 ```
-<table>
+
 |cuisine| id  |                                                                                                                                                                              ingredients                                                                                                                                                                               |
 |-------|----:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |irish  | 2238|['eggs', 'citrus fruit', 'raisins', 'sourdough starter', 'flour', 'hot tea', 'sugar', 'ground nutmeg', 'salt', 'ground cinnamon', 'milk', 'butter']                                                                              |
 |chinese|41882|['boneless chicken skinless thigh', 'minced garlic', 'steamed white rice', 'baking powder', 'corn starch', 'dark soy sauce', 'kosher salt', 'peanuts', 'flour', 'scallions', 'Chinese rice vinegar', 'vodka', 'fresh ginger', 'egg whites', 'broccoli', 'toasted sesame seeds', 'sugar', 'store bought low sodium chicken stock', 'baking soda', 'Shaoxing wine', 'oil']|
 |mexican| 2362|['green chile', 'jalapeno chilies', 'onions', 'ground black pepper', 'salt', 'chopped cilantro fresh', 'green bell pepper', 'garlic', 'white sugar', 'roma tomatoes', 'celery', 'dried oregano']|
-</table>
+
 
 이번에는 각 cuisine의 갯수의 분포를 알아보겠습니다.
 
@@ -61,7 +61,7 @@ pandas 의 pivot_table 함수를 사용해서 각 cuisne에 해당하는 row의 
 ```python
 cuisine_count=pd.pivot_table(df, index=["cuisine"], values=["id"], aggfunc='count')
 ```
-####실행결과
+#### 실행결과
 
 
 
@@ -93,7 +93,7 @@ matplotlib 을 이용하여 시각화하여 나타내어보면 아래의 그래�
 df['cuisine'].value_counts().plot(kind= 'bar')  
 ```
 <figure>
-   <img src="{{ "/media/img/n_of_cuisne_by_country.png" | absolute_url }}" />
+   <img src="{{ "/media/img/n_of_cusine_by_country.png" | absolute_url }}" />
    <figcaption>cusine_chart</figcaption>
 </figure>
 
@@ -105,7 +105,7 @@ df['cuisine'].value_counts().plot(kind= 'bar')
 2. 정규식을 이용하여 특수문자를 모두 제거해줍니다.
 3. 숫자도 제거해줍니다
 4. oz 등 재료 단위와 crushed/ground 등 의 단어도 제거해줍니다.
-5. nltk package 를 이용하여 ingredient들을 모두 단어의 기본형으로 바꿔줍니다 (ex.tomatoes -> tomato )
+5. nltk package 를 이용하여 ingredient들을 모두 단어의 기본형으로 바꿔줍니다 (ex.tomatoes -> tomato)
 
 ```python
 def clean_recipe(recipe): # 소문자로 변환
