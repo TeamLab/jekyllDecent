@@ -82,14 +82,14 @@ writer.close()
 
 TensorBoard는 `summary` operation을 이용하여 저장한 데이터들을 merge한 후 그래프를 시각화합니다. 따라서 우리는 summary operation이 로그 데이터를 저장할 디렉터리를 먼저 생성한 후 튜토리얼을 진행하겠습니다. (`line 4~5`) 앞으로 진행될 튜토리얼의 모든 로그 데이터들은 `tb_tutorial` 디렉터리에 각 주제에 맞게 하위 디렉터리를 생성 후 그 곳에 저장하도록 하겠습니다.
 
-*TensorBoard는 해당 디렉터리에 로그를 누적하여 저장하며 가장 최근에 저장된 로그를 참고하여 그래프를 그립니다.*
+> *TensorBoard는 해당 디렉터리에 로그를 누적하여 저장하며 가장 최근에 저장된 로그를 참고하여 그래프를 그립니다.*
 
 
 `line 8`, `11`, `14`를 보면 알 수 있듯이 `tf.summary`를 이용하여 각 연산자들에 대한 요약 데이터를 저장하고있습니다. 각 summary operation들의 자세한 설명은 [여기](https://www.tensorflow.org/api_guides/python/summary)를 참고하시기 바랍니다. TensorBoard에서도 마찬가지로 각각의 요약 데이터들은 그래프 내에서는 지엽적인 존재입니다. 요약 데이터들을 연결하기 위해서는 `merge_all()` 함수를 이용하여 모든 요약 데이터들을 하나로 합쳐야 합니다.(`line 16`) 그러면 모든 요약 데이터를 가지고 있는 summary 프로토버퍼 오브젝트를 생성할 수 있습니다. 우리는 요약 데이터를 디스크에 저장하기 위해 `FileWriter`에 프로토버퍼 오브젝트를 넘겨줘야합니다. `cru_dir`로 이벤트 파일이 저장될 디렉터리를 지정해주었고, `graph` parameter를 설정하여 TensorBoard를 통해 Data Flow Graph를 확인할 예정입니다.(`line 21`)
 
 위 코드를 실행하면 터미널창에는 아무것도 나타나지 않고, `tb_tutorial/ex/` 디렉터리가 생성 된 것을 확인할 수 있을 것입니다. 이제, TensorBoard에서 그래프를 확인하기 위해서 터미널창에 `tensorboard --logdir=FileWriter에서_지정한_경로`를 입력해주면 됩니다. 위의 예시코드를 실행한 후 TensorBoard를 확인하는 경우라면 `tensorboard --logdir=tb_tutorial/ex/`라고 명령어를 입력하시면 됩니다.
 
-*logdir 후의 경로가 이벤트 파일이 있는 디렉터리까지 가지 않아도 (이벤트 파일이 있는 디렉터리의 상위 디렉터리여도, 즉 예시의 경우 tb_tutorial까지여도) TensorBoard에서 알아서 구조를 매핑하여 시각화해줍니다.*
+> *logdir 후의 경로가 이벤트 파일이 있는 디렉터리까지 가지 않아도 (이벤트 파일이 있는 디렉터리의 상위 디렉터리여도, 즉 예시의 경우 tb_tutorial까지여도) TensorBoard에서 알아서 구조를 매핑하여 시각화해줍니다.*
 
 아무런 에러없이 터미널창에
 {% highlight pycon %}
@@ -104,6 +104,6 @@ Strarting TensorBoard at http://localhost:6006
 
 각각의 노드들을 클릭하면 해당 노드에 대한 간단한 description이 오른쪽 상단에 나옵니다. 그래프를 살펴보면 `const1`과 `const2`라는 Constant가 Add 연산을 하는 노드의 input으로 들어가 `add`라는 summary histogram으로 출력되는 **Flow** 를 볼 수 있습니다.
 
-*tensorboard는 logdir 뒤 디렉터리명을 잘못 입력해도 별도의 에러 메시지가 뜨지 않습니다. 현재까지는 path 에러 발생의 유무를 http://localhost:6006 에 접속하여 결과가 표시되는지 확인하는 것 이외에는 별도의 방법이 없습니다 T_T*
+> *tensorboard는 logdir 뒤 디렉터리명을 잘못 입력해도 별도의 에러 메시지가 뜨지 않습니다. 현재까지는 path 에러 발생의 유무를 http://localhost:6006 에 접속하여 결과가 표시되는지 확인하는 것 이외에는 별도의 방법이 없습니다 T_T*
 
 ###
