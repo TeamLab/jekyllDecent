@@ -22,6 +22,7 @@ disqus_shortname: "teamlab-5"
 sass:
     style: compressed
 markdown: kramdown
+highlight: rouge
 kramdown:
   syntax_highlighter_opts:
     disable: true
