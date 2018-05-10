@@ -411,7 +411,8 @@ with tf.name_scope('train') as scope:
     merged = tf.summary.merge_all()
 
     for step in range(30001):
-        _merged, _cost, _W, _b, _ = sess.run([merged, cost, W, b, train], feed_dict={x: x_data, y: y_data})
+        _merged, _cost, _W, _b, _ = sess.run([merged, cost, W, b, train],
+                                              feed_dict={x: x_data, y: y_data})
         writer.add_summary(_merged, global_step=step)
         if step % 1000 == 0:
             print("Step:", step, "\tCost:", _cost, "\tW:", _W[0], "\tb:", _b)
@@ -501,8 +502,7 @@ with tf.name_scope('fc') as scope:
     tf.summary.histogram('logits', logits)
 
 with tf.name_scope('train') as scope:
-    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits,
-                                                                  labels=y))
+    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits,labels=y))
     tf.summary.histogram('cost', cost)
 
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -522,7 +522,7 @@ with tf.name_scope('train') as scope:
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
             feed_dict = {x:batch_xs, y:batch_ys}
             _merged, _cost, _ = sess.run([merged, cost, train],
-                                         feed_dict=feed_dict)
+                                          feed_dict=feed_dict)
             writer.add_summary(_merged, global_step=epoch*i)
             avg_cost += _cost / total_batch
         print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
