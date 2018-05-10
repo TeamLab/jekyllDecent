@@ -5,6 +5,7 @@ date: 2018-04-30
 tags: TensorBoard Tutorial
 category: Tutorials
 author: jangyehoon
+math: true
 ---
 
 이번 포스팅에서는 TensorBoard의 간단한 사용법에 대해 다양한 tensorflow를 활용한 예시 code와 함께 알아보도록 하겠습니다.
@@ -160,11 +161,15 @@ x_data = [12.0, 28.0, 36.5, 42.0, 29.8]
 y_data = [53.6, 82.4, 97.7, 107.6, 85.64]
 
 def norm(data):
+\# input으로 들어오는 섭씨온도를 정규화해주는 함수
+\# x값을 정규화해주지 않으면 학습과정 중 w값과 b값이 양의 무한대, 음의 무한대로 튀는 현상을 발견할 수 있습니다.
+
     data = np.array(data)
     x_norm = np.zeros([len(data)])
     for i in range(len(data)):
         x_norm[i] = data[i] / 100
     return np.reshape(x_norm, [-1, 1])
+
 
 x_data = norm(x_data)
 y_data = np.reshape(y_data, [-1, 1])
@@ -189,13 +194,14 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
 for step in range(30001):
-    _cost, _W, _b, _ = sess.run([cost, W, b, train], feed_dict={x:x_data, y:y_data})
+    \_cost, \_W, \_b, _ = sess.run([cost, W, b, train],
+                                feed_dict={x:x_data, y:y_data})
     if step % 1000 == 0:
-        print("Step:", step, "\tCost:", _cost, "\tW:", _W[0], "\tb:", _b)
+        print("Step:", step, "\tCost:",
+              \_cost, "\tW:", \_W[0], "\tb:", \_b)
 
 writer = tf.summary.FileWriter(cur_dir, graph=sess.graph)
 writer.close()
-
 print("X: 20, Y:", sess.run(hypothesis[0], feed_dict={x:norm([20])}))
 print("X: 30, Y:", sess.run(hypothesis[0], feed_dict={x:norm([30])}))
 print("X: 40, Y:", sess.run(hypothesis[0], feed_dict={x:norm([40])}))
@@ -205,7 +211,7 @@ print("X: 60, Y:", sess.run(hypothesis[0], feed_dict={x:norm([60])}))
 
 > *실행결과*
 
-{%highlight pycon %}
+{% highlight pycon %}
 ...
 Step: 27000 	Cost: 0.00965826 	W: [ 179.03100586] 	b: [ 32.29016876]
 Step: 28000 	Cost: 0.00663723 	W: [ 179.19673157] 	b: [ 32.24048233]
@@ -217,3 +223,12 @@ X: 40, Y: [ 103.94458008]
 X: 50, Y: [ 121.88941956]
 X: 60, Y: [ 139.83427429]
 {% endhighlight %}
+
+위 코드는 섭씨온도를 입력하면 화씨온도를 예측하는 선형회귀식
+$$y = wx\,+\,b $$
+의 `w`와 `b`를 구하는 코드입니다. Linear Regression을 TensorFlow로 구현하는 코드에 대한 설명은 본 튜토리얼에서는 생략하도록 하겠습니다. 위 코드를 실행한 후 TensorBoard로 확인하면 라애롸 같은 그래프가 생성된 것을 확인할 수 있습니다.
+
+<figure>
+   <img src="{{ "/media/img/tb_tutorial/fahrenheit_converter_graph.png" | absolute_url }}" />
+   <figcaption>Fahrenheit Converter Graph</figcaption>
+</figure>
