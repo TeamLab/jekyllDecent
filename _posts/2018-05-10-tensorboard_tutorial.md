@@ -94,7 +94,7 @@ TensorBoard는 `summary` operation을 이용하여 저장한 데이터들을 mer
 > *TensorBoard는 해당 디렉터리에 로그를 누적하여 저장하며 가장 최근에 저장된 로그를 참고하여 그래프를 그립니다.*
 
 
-`line 8`, `11`, `14`를 보면 알 수 있듯이 `tf.summary`를 이용하여 각 연산자들에 대한 요약 데이터를 저장하고있습니다. 각 summary operation들의 자세한 설명은 [여기](https://www.tensorflow.org/api_guides/python/summary)를 참고하시기 바랍니다. TensorBoard에서도 마찬가지로 각각의 요약 데이터들은 그래프 내에서는 지엽적인 존재입니다. 요약 데이터들을 연결하기 위해서는 `merge_all()` 함수를 이용하여 모든 요약 데이터들을 하나로 합쳐야 합니다.(`line 16`) 그러면 모든 요약 데이터를 가지고 있는 summary 프로토버퍼 오브젝트를 생성할 수 있습니다. 우리는 요약 데이터를 디스크에 저장하기 위해 `FileWriter`에 프로토버퍼 오브젝트를 넘겨줘야합니다. `cru_dir`로 이벤트 파일이 저장될 디렉터리를 지정해주었고, `graph` parameter를 설정하여 TensorBoard를 통해 Data Flow Graph를 확인할 예정입니다.(`line 21`)
+`line 8`, `11`, `14`를 보면 알 수 있듯이 `tf.summary`를 이용하여 각 연산자들에 대한 요약 데이터를 저장하고있습니다. 각 summary operation들의 자세한 설명은 [여기](https://www.tensorflow.org/api_guides/python/summary)를 참고하시기 바랍니다. TensorBoard에서도 마찬가지로 각각의 요약 데이터들은 그래프 내에서는 지엽적인 존재입니다. 요약 데이터들을 연결하기 위해서는 `merge_all()` 함수를 이용하여 모든 요약 데이터들을 하나로 합쳐야 합니다.(`line 16`) 그러면 모든 요약 데이터를 가지고 있는 summary 프로토버퍼 오브젝트를 생성할 수 있습니다. 우리는 요약 데이터를 디스크에 저장하기 위해 `FileWriter`에 프로토버퍼 오브젝트를 넘겨줘야합니다. `cur_dir`로 이벤트 파일이 저장될 디렉터리를 지정해주었고, `graph` parameter를 설정하여 TensorBoard를 통해 Data Flow Graph를 확인할 예정입니다.(`line 21`)
 
 
 위 코드를 실행하면 터미널창에는 아무것도 나타나지 않고, `tb_tutorial/ex/` 디렉터리가 생성 된 것을 확인할 수 있을 것입니다. 이제, TensorBoard에서 그래프를 확인하기 위해서 터미널창에 `tensorboard --logdir='FileWriter에서_지정한_경로'`를 입력해주면 됩니다. 위의 예시코드를 실행한 후 TensorBoard를 확인하는 경우라면 `tensorboard --logdir=tb_tutorial/ex/`라고 명령어를 입력하시면 됩니다.
@@ -114,7 +114,7 @@ Strarting TensorBoard at http://localhost:6006
 
 각각의 노드들을 클릭하면 해당 노드에 대한 간단한 description이 오른쪽 상단에 나옵니다. 그래프를 살펴보면 `const1`과 `const2`라는 Constant가 Add 연산을 하는 노드의 input으로 들어가 `add`라는 summary histogram으로 출력되는 **Flow** 를 볼 수 있습니다.
 
-> *tensorboard는 logdir 뒤 디렉터리명을 잘못 입력해도 별도의 에러 메시지가 뜨지 않습니다. 현재까지는 path 에러 발생의 유무를 http://localhost:6006 에 접속하여 결과가 표시되는지 확인하는 것 이외에는 별도의 방법이 없습니다 T_T*
+> *tensorboard는 logdir 뒤 디렉터리명을 잘못 입력해도 별도의 에러 메시지가 뜨지 않습니다. 현재까지는 path 에러 발생의 유무를 http://localhost:6006 에 접속하여 결과가 표시되는지 확인하는 것 이외에는 별도의 방법이 없습니다 :-(*
 
 
 #### Simple Operation
@@ -143,7 +143,7 @@ writer = tf.summary.FileWriter(cur_dir, graph=sess.graph)
 writer.close()
 {% endhighlight %}
 
-위와 마찬가지로 요약 데이터 로그가 저장될 디렉터리를 지정해 준 뒤(`line 4~5`), `a`, `b`, `c`라는 placeholder를 생성하고 곱셈 연산 노드와 지수연산 노드를 생성해 줍니다. 노드들을 생성할 때마다 `summaary`로 연산자의 요약 데이터도 생성해 준 뒤(`line 7~15`), 연산의 마지막 단계에서 `merge_all` 함수를 호출해줍니다(`line 17`). `Session`을 생성 한 뒤 `run` 함수를 이용하여 연산을 실행합니다. 이때, `a`, `b`, `c`에 들어갈 값을 `feed_dict` 로 지정해줍니다(`line 18~19`). `FileWriter`를 이용해 코드 도입부분에서 지정해준 디렉터리에 이벤트 파일을 저장해줍니다(`line20~21`). 코드를 실행하였으면 이제 터미널창으로 돌아가서 `tensorboard --logdir='FileWriter에서_지정한_경로'` 를 입력한 후 웹 브라우저 주소창에 `http://localhost:6006` 입력하여 tensorboard에 나오는 그래프를 확인합니다.
+위와 마찬가지로 요약 데이터 로그가 저장될 디렉터리를 지정해 준 뒤(`line 4~5`), `a`, `b`, `c`라는 placeholder를 생성하고 곱셈 연산 노드와 지수연산 노드를 생성해 줍니다. 노드들을 생성할 때마다 `summary`로 연산자의 요약 데이터도 생성해 준 뒤(`line 7~15`), 연산의 마지막 단계에서 `merge_all` 함수를 호출해줍니다(`line 17`). `Session`을 생성 한 뒤 `run` 함수를 이용하여 연산을 실행합니다. 이때, `a`, `b`, `c`에 들어갈 값을 `feed_dict` 로 지정해줍니다(`line 18~19`). `FileWriter`를 이용해 코드 도입부분에서 지정해준 디렉터리에 이벤트 파일을 저장해줍니다(`line20~21`). 코드를 실행하였으면 이제 터미널창으로 돌아가서 `tensorboard --logdir='FileWriter에서_지정한_경로'` 를 입력한 후 웹 브라우저 주소창에 `http://localhost:6006` 입력하여 tensorboard에 나오는 그래프를 확인합니다.
 
 <figure>
    <img src="{{ "/media/img/tb_tutorial/power_graph.png" | absolute_url }}" />
@@ -166,9 +166,8 @@ x_data = [12.0, 28.0, 36.5, 42.0, 29.8]
 y_data = [53.6, 82.4, 97.7, 107.6, 85.64]
 
 def norm(data):
-#input으로 들어오는 섭씨온도를 정규화해주는 함수
-#x값을 정규화해주지 않으면 학습과정 중 w값과 b값이 양의 무한대, 음의 무한대로 튀는 현상을 발견할 수 있습니다.
-
+    #input으로 들어오는 섭씨온도를 정규화해주는 함수
+    #x값을 정규화해주지 않으면 학습과정 중 w값과 b값이 양의 무한대, 음의 무한대로 튀는 현상을 발견할 수 있습니다.
     data = np.array(data)
     x_norm = np.zeros([len(data)])
     for i in range(len(data)):
@@ -253,7 +252,7 @@ $$F=(9/5*C)+32\;(F=Fahrenheit, C=Celsius)$$
 위의 코드를 실행했을 때, step이 증가할때마다 **cost** , **W** , **b** 의 값이 업데이트 되는 것을 확인할 수 있었습니다. TensorBoard에서는 `histogram` 으로 변수에 할당된 값의 변화를 저장하고 그 값을 한번에 모아서 한 그래프에 보여주는 기능을 제공합니다. 위의 코드에 단 몇줄만 추가하면 변화량을 시각화하여 볼 수 있습니다.
 
 
-> *아래 예시부터는 코드의 변화가 있을 때마다 이벤트 파일을 저장하는 디렉터리를 다르게 지정하여 전후 코드 간 비교 가능하게 하였습니다. 디렉터리 지정은 TensorBoard 사용자 임의대로 할 수 있습니다. 또한 `...` 으로 생략한 부분은 동일 내용의 코드입니다. 본 tutorial에서 사용한 모든 코드는 [이 곳](http://github.com/YeHoonJang)에서 확인가능 합니다.*
+> *아래 예시부터는 코드의 변화가 있을 때마다 이벤트 파일을 저장하는 디렉터리를 다르게 지정하여 전후 코드 간 비교 가능하게 하였습니다. 디렉터리 지정은 TensorBoard 사용자 임의대로 할 수 있습니다. 또한 `...` 으로 생략한 부분은 동일 내용의 코드입니다. 본 tutorial에서 사용한 모든 코드는 [이 곳](https://github.com/YeHoonJang/code_for_study/tree/master/2018/blog/tensorboard)에서 확인가능 합니다.*
 
 
 {% highlight python %}
@@ -316,7 +315,7 @@ Distribution tab에서는 아래와 같은 그래프들을 확인할 수 있습�
    <figcaption>Cost Distribution Graph</figcaption>
 </figure>
 
-그래프의 세로축은 각각 weight, bias, cost의 step마다의 값이고 가로축은 step수입니다. 학습을 거득할 수록 cost는 0에 가까워지고, weight와 bias는 각각 180과 32에 가까워집니다.
+그래프의 세로축은 각각 weight, bias, cost의 step마다의 값이고 가로축은 step 수 입니다. 학습을 거듭할 수록 cost는 0에 가까워지고, weight와 bias는 각각 180과 32에 가까워집니다.
 
 
 Histogram tab에서는 아래와 같은 그래프들을 확인할 수 있습니다.
@@ -355,7 +354,8 @@ with tf.name_scope('graph') as scope:
     merged = tf.summary.merge_all()
 
     for step in range(30001):
-        _merged, _cost, _W, _b, _ = sess.run([merged, cost, W, b, train], feed_dict={x:x_data, y:y_data})
+        _merged, _cost, _W, _b, _ = sess.run([merged, cost, W, b, train],
+                                             feed_dict={x:x_data, y:y_data})
         writer.add_summary(_merged, global_step=step)
         if step % 1000 == 0:
             print("Step:", step, "\tCost:", _cost, "\tW:", _W[0], "\tb:", _b)
@@ -365,7 +365,7 @@ with tf.name_scope('graph') as scope:
 {% endhighlight %}
 
 
-`with tf.name_scope('graph') as scope: ` 라는 한줄을 namespace로 묶고자 하는 노드 전에 선언해주기만 하면 끝입니다. `name_scope`의 인자로 들어가는 `'graph'`는 TensorBoard에서 보여질 namespace의 이름입니다. `name_scope` 으로 묶인 노드들은 distribution graph와 histogram graph도 묶여서 그려집니다.
+`with tf.name_scope('graph') as scope: ` 라는 한줄을 namespace로 묶고자 하는 노드 전에 선언해주기만 하면 끝입니다. `name_scope`의 인자로 들어가는 `'graph'`는 TensorBoard에서 보여질 namespace의 이름입니다. `name_scope` 으로 묶인 노드들은 distribution graph와 histogram graph에서도 묶여서 그려집니다.
 
 <figure>
    <img src="{{ "/media/img/tb_tutorial/name_scope.png" | absolute_url }}" />
@@ -382,7 +382,7 @@ with tf.name_scope('graph') as scope:
    <figcaption>Name Scope's Histogram Graph</figcaption>
 </figure>
 
-`name_scope`은 원하는 만큼 사용할 수 있습니다. 위의 코드에서 **Hypothesis** , **Cost** , **Train** 으로 나눠서 name_scope을 지정해준 뒤 TensorBoard로 확익해보겠습니다.
+`name_scope`은 원하는 만큼 사용할 수 있습니다. 위의 코드에서 **Hypothesis** , **Cost** , **Train** 으로 나눠서 name_scope을 지정해준 뒤 TensorBoard로 확인해보겠습니다.
 
 {% highlight python %}
 ...
@@ -450,7 +450,7 @@ with tf.name_scope('train') as scope:
 
 ### MNIST CNN with TensorBoard!!
 
-여러분들은 TensorBoard의 여러 기능들 중 기계학습과 심층 신경망 학습에 꼭 필요한 기능들에 대해서 다 배웠습니다! 여러 기능들이 더 있지만 이 기본적인 operation 들로 **CNN MNIST Classifier** 의 Data Flow Graph를 볼 수 있습니다. 예시코드는 김성훈 교수님의 [MNIST CNN code](https://github.com/hunkim/DeepLearningZeroToAll/blob/master/lab-11-1-mnist_cnn.py)를 참고하였습니다.
+여러분들은 TensorBoard의 여러 기능들 중 기계학습과 심층 신경망 학습에 최소한으로 필요한 기능들에 대해서 다 배웠습니다! 여러 기능들이 더 있지만 이 기본적인 operation 들로 **CNN MNIST Classifier** 의 Data Flow Graph를 볼 수 있습니다. 예시코드는 김성훈 교수님의 [MNIST CNN code](https://github.com/hunkim/DeepLearningZeroToAll/blob/master/lab-11-1-mnist_cnn.py)를 참고하였습니다.
 
 {% highlight python %}
 import tensorflow as tf
@@ -501,7 +501,8 @@ with tf.name_scope('fc') as scope:
     tf.summary.histogram('logits', logits)
 
 with tf.name_scope('train') as scope:
-    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y))
+    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits,
+                                                                  labels=y))
     tf.summary.histogram('cost', cost)
 
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -520,17 +521,18 @@ with tf.name_scope('train') as scope:
         for i in range(total_batch):
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
             feed_dict = {x:batch_xs, y:batch_ys}
-            _merged, _cost, _ = sess.run([merged, cost, train], feed_dict=feed_dict)
+            _merged, _cost, _ = sess.run([merged, cost, train],
+                                         feed_dict=feed_dict)
             writer.add_summary(_merged, global_step=epoch*i)
             avg_cost += _cost / total_batch
         print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.9f}'.format(avg_cost))
 {% endhighlight %}
 
-TensorBoard를 실행하여 어떤 Graph와 Distribution, Histogram이 그려졌는지 확인해보세요! 지금까지 읽어주시고 같이 실습해주셔서 (안해주셨어도) 감사합니다.
+위 코드를 살펴본 후 run하고, TensorBoard를 실행하여 어떤 Graph와 Distribution, Histogram이 그려졌는지 확인해보세요! 지금까지 읽어주시고 같이 실습해주셔서 (안해주셨어도) 감사합니다.
 
-> **References**
-[TensorFlow](https://www.tensorflow.org/)
-[텐서보드(TensorBoard) 시작하기](https://www.popit.kr/%ED%85%90%EC%84%9C%EB%B3%B4%EB%93%9Ctensorboard-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/)
-[텐서보드 사용법](http://pythonkim.tistory.com/39)
-[텐서 보드를 이용하여 학습 과정을 시각화 해보자](http://bcho.tistory.com/1159)
-[DeepLearningZeroToAll](https://github.com/hunkim/DeepLearningZeroToAll)
+> ### *References*
+>- [TensorFlow](https://www.tensorflow.org/)
+>- [텐서보드(TensorBoard) 시작하기](https://www.popit.kr/%ED%85%90%EC%84%9C%EB%B3%B4%EB%93%9Ctensorboard-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/)
+>- [텐서보드 사용법](http://pythonkim.tistory.com/39)
+>- [텐서 보드를 이용하여 학습 과정을 시각화 해보자](http://bcho.tistory.com/1159)
+>- [DeepLearningZeroToAll](https://github.com/hunkim/DeepLearningZeroToAll)
