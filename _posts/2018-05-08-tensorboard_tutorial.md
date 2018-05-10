@@ -195,7 +195,7 @@ sess.run(tf.global_variables_initializer())
 
 for step in range(30001):
     \_cost, \_W, \_b, _ = sess.run([cost, W, b, train],
-                                feed_dict={x:x_data, y:y_data})
+                                    feed_dict={x:x_data, y:y_data})
     if step % 1000 == 0:
         print("Step:", step, "\tCost:",
               \_cost, "\tW:", \_W[0], "\tb:", \_b)
@@ -225,8 +225,8 @@ X: 60, Y: [ 139.83427429]
 {% endhighlight %}
 
 위 코드는 섭씨온도를 입력하면 화씨온도를 예측하는 선형회귀식
-$$y = wx\,+\,b $$
-의 `w`와 `b`를 구하는 코드입니다. Linear Regression을 TensorFlow로 구현하는 코드에 대한 설명은 본 튜토리얼에서는 생략하도록 하겠습니다. 위 코드를 실행한 후 TensorBoard로 확인하면 라애롸 같은 그래프가 생성된 것을 확인할 수 있습니다.
+$$ y = wx\,+\,b $$
+의 `w`와 `b`를 구하는 코드입니다. Linear Regression을 TensorFlow로 구현하는 코드에 대한 설명은 본 튜토리얼에서는 생략하도록 하겠습니다. 위 코드를 실행한 후 TensorBoard로 확인하면 아래와 같은 그래프가 생성된 것을 확인할 수 있습니다.
 
 <figure>
    <img src="{{ "/media/img/tb_tutorial/fahrenheit_converter_graph.png" | absolute_url }}" />
