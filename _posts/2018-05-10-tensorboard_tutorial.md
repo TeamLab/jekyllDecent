@@ -311,7 +311,7 @@ Distribution tab에서는 아래와 같은 그래프들을 확인할 수 있습�
    <figcaption>Bias Distribution Graph</figcaption>
 </figure>
 <figure>
-   <img src="{{ "/media/img/tb_tutorial/dist_cost.png" | absolute_url }}" />
+   <img src="{{ "/media/img/tb_tutorial/cost.png" | absolute_url }}" />
    <figcaption>Cost Distribution Graph</figcaption>
 </figure>
 
