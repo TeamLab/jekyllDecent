@@ -336,7 +336,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
                }
 
 
-  4.  마지막으로 flask 모듈을 사용해 스크립트를 구동하도록 하겠습니다.
+  4.  마지막으로 flask 모듈을 사용해 챗봇 서버를 구동하도록 하겠습니다.
       > port 변수에 할당한 포트번호는  카카오톡 api에게 허용하는 포트입니다.
 
            app = Flask(__name__)
@@ -364,21 +364,21 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
    다음과 같이 앱 URL에 입력 해 주세요
    > 서버 주소 : flask에서 허용한 포트
 
-    <img src="{{ "/media/img/chatbot_blogging/27.kakaotalk_integration.png" | absolute_url }}">
+   <img src="{{ "/media/img/chatbot_blogging/27.kakaotalk_integration.png" | absolute_url }}">
 
-    이전과는 다르게 에러가 발생하지 않습니다.
+   이전과는 다르게 에러가 발생하지 않습니다.
 
 
 ### 3. 관리 - 상세설정 - 플러스친구 공개설정하기
 
-    <img src="{{ "/media/img/chatbot_blogging/30.kakaotalk_settings.png" | absolute_url }}">
+   <img src="{{ "/media/img/chatbot_blogging/30.kakaotalk_settings.png" | absolute_url }}">
 
-    챗봇이 완성됐습니다. 이제 플러스친구 이용이 가능합니다. 
+   챗봇이 완성됐습니다. 이제 플러스친구 이용이 가능합니다. 
 
 
 ### 4. 플러스친구 추가 후 확인해보기
 
-    <img src="{{ "/media/img/chatbot_blogging/31.output.png" | absolute_url }}">
+   <img src="{{ "/media/img/chatbot_blogging/31.output.png" | absolute_url }}">
 
 
 ## reference :
