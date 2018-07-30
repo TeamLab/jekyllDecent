@@ -36,33 +36,33 @@ $$ min\sum_{u, i\in k} (r_{ui} - \widehat{r}_{ui})^2 \,\, s.t.\,\, rank(\widehat
 
 평점이 채워진 행렬을 R이라 할 때, User행렬 P와 Movie행렬 Q의 Matrix 는 $ \widehat{R} $ 로 표현된다. ($R$: 비어있는 곳이 없는 원래 데이터, $ \widehat{R} $: 비어있는 곳을 복구한 데이터)
 
-$ R \approx P \times Q^T = \widehat{R} $
+$$ R \approx P \times Q^T = \widehat{R} $$
 
 오차를 최소로 줄이기 위해 Gradient Descent를 적용하고 그를 위해서 error 에 대해서 정리하면,
 
-$ e^2_{ij} = (r_{ui} - \widehat{r}_{ui})^2 = (r_{ui} - \sum_{k=1}^K p_{ik}q_{kj})^2 $
+$$ e^2_{ij}=(r_{ui}-\widehat{r}_{ui})^2=(r_{ui}-\sum_{k=1}^K p_{ik}q_{kj})^2$$
 
 여기서 p, q 에 대해서 미분하게되면
 
-$ \frac{\partial}{\partial q_{ik}}e^2_{ij} = -2(r_{ui} - \widehat{r}_{ui})(p_{ik}) = -2e_{ij}p_{ik}  $
+$$ \frac{\partial}{\partial q_{ik}}e^2_{ij}=-2(r_{ui}-\widehat{r}_{ui})(p_{ik})=-2e_{ij}p_{ik}$$
 
-$ \frac{\partial}{\partial q_{ik}}e^2_{ij} = -2(r_{ui} - \widehat{r}_{ui})(q_{kj}) = -2e_{ij}q_{kj}  $
+$$ \frac{\partial}{\partial q_{ik}}e^2_{ij} = -2(r_{ui} - \widehat{r}_{ui})(q_{kj}) = -2e_{ij}q_{kj} $$
 
 따라서 아래와 같은 식을 얻게 된다.
 
-$ p'_{ik} = p_{ik} + \alpha\frac{\partial}{\partial p_{ik}}e^2_{ij} = p_{ik} + 2\alpha e_{ij}q_{kj} $
+$$p'_{ik}=p_{ik}+\alpha\frac{\partial}{\partial p_{ik}}e^2_{ij}=p_{ik}+2\alpha e_{ij}q_{kj}$$
 
-$ q'_{ik} = q_{ik} + \alpha\frac{\partial}{\partial q_{ik}}e^2_{ij} = q_{ik} + 2\alpha e_{ij}p_{kj} $
+$$ q'_{ik} = q_{ik} + \alpha\frac{\partial}{\partial q_{ik}}e^2_{ij} = q_{ik} + 2\alpha e_{ij}p_{kj} $$
 
-$ E = \sum_{(u_{i}, d_{j}, r_{ij)}\in T} (r_{ij} - \sum_{k=1}^K p_{ik}q_{kj})^2$
+$$ E=\sum_{(u_{i},d_{j},r_{ij)}\in T}(r_{ij}-\sum_{k=1}^K p_{ik}q_{kj})^2$$
 
 자 여기서 한단계 더 나아가 Regularization term 을 주도록 하자. 이는 Overfitting 을 막기 위해서 주어지는 term 이다.
 
-$ e^2_{ij} = (r_{ij} - \sum_{k=1}^K p_{ik}q_{kj})^2 + \frac{\beta}{2}\sum_{k=1}^K (\parallel P \parallel^2 + \parallel Q \parallel^2)$
+$$e^2_{ij}=(r_{ij}-\sum_{k=1}^K p_{ik}q_{kj})^2+\frac{\beta}{2}\sum_{k=1}^K (\parallel P \parallel^2+\parallel Q \parallel^2)$$
 
-$ p'_{ik} = p_{ik} + \alpha\frac{\partial}{\partial p_{ik}}e^2_{ij} = p_{ik} + (2e_{ij}q_{kj}-\beta p_{ik}) $  
+$$p'_{ik}=p_{ik}+\alpha\frac{\partial}{\partial p_{ik}}e^2_{ij}=p_{ik}+(2e_{ij}q_{kj}-\beta p_{ik})$$  
 
-$ q'_{ik} = q_{ik} + \alpha\frac{\partial}{\partial q_{ik}}e^2_{ij} = q_{ik} + (2e_{ij}p_{ik}-\beta q_{kj}) $
+$$q'_{ik}=q_{ik}+\alpha\frac{\partial}{\partial q_{ik}}e^2_{ij}=q_{ik}+(2e_{ij}p_{ik}-\beta q_{kj})$$
 
 #### Recommend System using tensorflow
 
