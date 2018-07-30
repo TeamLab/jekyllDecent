@@ -62,41 +62,39 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 1. 탄력적 IP 할당하기
 
-       <img src="{{ "/media/img/chatbot_blogging/8.elastic_ip.png" | absolute_url }}">
-       새 주소 할당을 클릭합니다.
+      <img src="{{ "/media/img/chatbot_blogging/8.elastic_ip.png" | absolute_url }}">
+      새 주소 할당을 클릭합니다.
         
-       <img src="{{ "/media/img/chatbot_blogging/9.new_addres.png" | absolute_url }}">
-       할당버튼을 눌러 IP주소를 할당 해 주세요.
+      <img src="{{ "/media/img/chatbot_blogging/9.new_addres.png" | absolute_url }}">
+      할당버튼을 눌러 IP주소를 할당 해 주세요.
         
-       <img src="{{ "/media/img/chatbot_blogging/10.new_addres_succeed.png" | absolute_url }}">
-        
+      <img src="{{ "/media/img/chatbot_blogging/10.new_addres_succeed.png" | absolute_url }}">
+       
 2. 할당된 탄력적 IP와 인스턴스 연결하기
 
-        <img src="{{ "/media/img/chatbot_blogging/11.connect_address.png" | absolute_url }}">
+      <img src="{{ "/media/img/chatbot_blogging/11.connect_address.png" | absolute_url }}">
         
-        탄력적 IP 중 새로 생성한 IP를 우클릭해 주소 연결 페이지로 이동합니다.
+      탄력적 IP 중 새로 생성한 IP를 우클릭해 주소 연결 페이지로 이동합니다.
         
-        <img src="{{ "/media/img/chatbot_blogging/12.connect_address1.png" | absolute_url }}">
+      <img src="{{ "/media/img/chatbot_blogging/12.connect_address1.png" | absolute_url }}">
         
-        연결하고자하는 인스턴스를 선택합니다.
+      연결하고자하는 인스턴스를 선택합니다.
         
-        <img src="{{ "/media/img/chatbot_blogging/13.connect_address2.png" | absolute_url }}">
+      <img src="{{ "/media/img/chatbot_blogging/13.connect_address2.png" | absolute_url }}">
 
 3.  이제 고정적인 IP주소가 생겼습니다!
 
-        <img src="{{ "/media/img/chatbot_blogging/14.succeed_connect_address.png" | absolute_url }}">
+      <img src="{{ "/media/img/chatbot_blogging/14.succeed_connect_address.png" | absolute_url }}">
 
     주소연결까지 마치셨다면, 마지막으로 보안그룹 설정을 해 주셔야 합니다.
 
 
 ### 4. 보안그룹 설정하기
   > 보안그룹 설정은 접근을 허용할 소스, 프로토콜, 포트범위 등을 설정하는 작업입니다.
+  
+   <img src="{{ "/media/img/chatbot_blogging/15.inbound_rule.png" | absolute_url }}">
 
-1. 보안그룹 설정하기
-
-  <img src="{{ "/media/img/chatbot_blogging/15.inbound_rule.png" | absolute_url }}">
-
-    인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
+   인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
 
 
 ## 2 플러스친구 개설하기
@@ -152,10 +150,8 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
   - 구현할 챗봇은 버튼형으로 오지선다로 퀴즈를 내고, 정답이면 알려주는 챗봇입니다.
   - 시나리오는 다음과 같습니다.
-  - 아마존 웹서버에 저장되어야하는 코드입니다.
-  
-         유저의 요청이 들어오면 -> 버튼으로 퀴즈의 카테고리를 선택하고 -> 퀴즈를 메시지로 보여주며 버튼으로 문항을 제공하고 -> 정답일경우 정답메시지와 초기 버튼 띄우기, 정답이 아닐경우 오답 메시지와 초기 버튼 띄우기
-   - 전체 코드는 다음과 같습니다.(아마존 웹 서버 내에 conda 가상환경, flask 모듈등이 설치되어있다 가정합니다.)
+         사용자의 요청 - 버튼으로 퀴즈의 카테고리 선택 - 퀴즈를 메시지로 보여주며 버튼으로 문항을 제공 - 정답일경우 정답메시지와 초기 버튼 띄우기, 정답이 아닐경우 오답 메시지와 초기 버튼 띄우기
+   - 서버 내 챗봇 모듈의 전체 코드는 다음과 같습니다.(아마존 웹 서버 내에 conda 가상환경, flask 모듈등이 설치되어있다 가정합니다.)
 
           #-*- coding: utf-8 -*-
           import os
