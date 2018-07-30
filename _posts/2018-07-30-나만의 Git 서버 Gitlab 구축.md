@@ -1,6 +1,6 @@
 ---
 
-layout: post title: 나만의 git 서버 - 간단 git lab 만들기 date: 2018-07-30 17:00:00 +0300 tags: git, fast category: Tutorials author: Chanwoo Jeong math: true published: true
+layout: post title: 나만의 git 서버 - 간단 git lab 만들기 date: 2018-07-30 17:00:00 +0300 tags: git, gitlab category: Tutorials author: Chanwoo Jeong math: true published: true
 
 comments: true
 --------------
