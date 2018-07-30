@@ -55,11 +55,15 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 1. 탄력적 IP 할당하기
         <img src="{{ "/media/img/chatbot_blogging/8.elastic_ip.png" | absolute_url }}">
+        새 주소 할당을 클릭합니다.
         <img src="{{ "/media/img/chatbot_blogging/9.new_addres.png" | absolute_url }}">
+        할당버튼을 누르면 ip주소가 할당되었습니다. 
         <img src="{{ "/media/img/chatbot_blogging/10.new_addres_succeed.png" | absolute_url }}">
-2. 탄력적 IP와 인스턴스 연결하기
+2. 할당된 탄력적 IP와 인스턴스 연결하기
         <img src="{{ "/media/img/chatbot_blogging/11.connect_address.png" | absolute_url }}">
+        탄력적 IP 중 새로 생성한 IP를 우클릭해 주소 연결 페이지로 이동합니다.
         <img src="{{ "/media/img/chatbot_blogging/12.connect_address1.png" | absolute_url }}">
+        연결하고자하는 인스턴스를 선택합니다.
         <img src="{{ "/media/img/chatbot_blogging/13.connect_address2.png" | absolute_url }}">
 
 3.  이제 고정적인 IP주소가 생겼습니다!
@@ -91,7 +95,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
       저는 '퀴즈봇'으로 시작하도록 하겠습니다.
 
-  4. 여러분들의 플러스친구가 개설되었습니다!
+  4. 플러스친구가 개설되었습니다.
     <img src="{{ "/media/img/chatbot_blogging/19.new_friend_succeed.png" | absolute_url }}">
 
 
@@ -328,7 +332,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ## 3. 카카오톡과 연동하기
 
 ### 1. 모듈 실행하기
-  <img src="{{ "/media/img/chatbot_blogging/26.run_quizbot.png" | absolute_url }}">
+  <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
 
 
   서버의 5000번포트에서 모듈이 실행중인것을 확인하실 수 있습니다.
@@ -338,7 +342,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
    다음과 같이 앱 URL에 입력 해 주세요
    > 서버 주소 : flask에서 허용한 포트
 
-   <img src="{{ "/media/img/chatbot_blogging/27.kakaotalk_integrationy.png" | absolute_url }}">
+   <img src="{{ "/media/img/chatbot_blogging/27.kakaotalk_integration.png" | absolute_url }}">
 
    이전과는 다르게 에러가 발생하지 않습니다.
 
