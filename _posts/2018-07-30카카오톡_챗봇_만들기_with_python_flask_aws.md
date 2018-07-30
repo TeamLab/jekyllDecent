@@ -356,7 +356,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 
 ## reference :
-  - [Teamlab,Applied Database System with Python Programming,2018.06.08,github ](https://github.com/TEAMLAB-Lecture/database-101)
-  - [plusfriendeam,카카오톡 플러스친구 API v.2.0 개요, 2018.07.19,github] https://github.com/plusfriend/auto_reply
-  - [깊은바다, 파이썬과 Flask로 만든 간단한 카카오톡 챗봇, 2017.04.22,AI Dev - 인공지능 개발자 모임] http://aidev.co.kr/chatbotdev/1268
-  - [VPC의 보안그룹 Amazon Virtual Private Cloud , n.d](https://docs.aws.amazon.com/ko_kr/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html)
+  - [Teamlab,Applied Database System with Python Programming,2018.06.08,github](https://github.com/TEAMLAB-Lecture/database-101)
+  - [plusfriendeam,카카오톡 플러스친구 API v.2.0 개요, 2018.07.19,github](https://github.com/plusfriend/auto_reply)
+  - [깊은바다, 파이썬과 Flask로 만든 간단한 카카오톡 챗봇, 2017.04.22,AI Dev - 인공지능 개발자 모임](http://aidev.co.kr/chatbotdev/1268)
+  - [VPC의 보안그룹, Amazon Virtual Private Cloud , n.d](https://docs.aws.amazon.com/ko_kr/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html)
