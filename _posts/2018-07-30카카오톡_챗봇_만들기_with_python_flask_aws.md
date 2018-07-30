@@ -68,8 +68,8 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
     주소연결까지 마치셨다면, 마지막으로 보안그룹 설정을 해 주셔야 합니다.
 
 
-###4. 보안그룹 설정하기
-  >  보안그룹은 서버에 어느 타입의 요청이 들어오면 어느 IP와 포트로의 접근을 허용 해 줄지에 대한 설정입니다.
+### 4. 보안그룹 설정하기
+  > 보안그룹 설정은 접근을 허용할 소스, 프로토콜, 포트범위 등을 설정하는 작업입니다.
 
 1. 보안그룹 설정하기
   <img src="{{ "/media/img/chatbot_blogging/15.inbound_rule.png" | absolute_url }}">
@@ -77,10 +77,10 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
     인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
 
 
-##2 플러스친구 개설하기
+## 2 플러스친구 개설하기
 저희는 카카오톡 플러스친구 api로 카카오톡 플러스친구 서비스와 서버를 연동할 예정입니다.
 
-###1. 플러스친구 등록하기
+### 1. 플러스친구 등록하기
   1. [플러스친구 관리자센터](https://center-pf.kakao.com/)로 이동 해 주세요
   <img src="{{ "/media/img/chatbot_blogging/16.plus_friend_admin.png" | absolute_url }}">
   2. 플러스친구 만들기로 이동하신 다음, 오른쪽 상단의 새 플러스친구 만들기 버튼을 눌러주세요
@@ -95,7 +95,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
     <img src="{{ "/media/img/chatbot_blogging/19.new_friend_succeed.png" | absolute_url }}">
 
 
-###2. 상세설정하기
+### 2. 상세설정하기
 
   1. 개설이 완료되었다면 상세설정페이지의 스마트채팅 페이지로 이동 한 뒤 API형을 선택합니다.
       <img src="{{ "/media/img/chatbot_blogging/21.choice_faq.png" | absolute_url }}">
@@ -116,7 +116,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 
 
-##3. 챗봇 모듈 생성하기
+## 3. 챗봇 모듈 생성하기
 
 [카카오톡 플러스친구 API 기술문서](https://github.com/plusfriend/auto_reply)와 [파이썬과 flask로 만든 간단한 카카오톡챗봇, AI Dev - 인공지능 개발자 모임, 2017.04.22, 깊은바다](http://aidev.co.kr/chatbotdev/1268)  를 참고해 챗봇을 구현했습니다.
 
@@ -285,8 +285,8 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
              choice_list =  choice_list+ i
 
 
-         '''-----------------------------------------------------------------------
-                                      codes
+         '''----------------------------------------------------------------------
+                                       codes
          ----------------------------------------------------------------------'''
 
          elif user_input in choice_list :
@@ -316,7 +316,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
            app = Flask(__name__)
 
-          '''-----------------------------------------------------------------------
+          '''----------------------------------------------------------------------
                                       codes
           ----------------------------------------------------------------------'''
 
@@ -327,13 +327,13 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 ## 3. 카카오톡과 연동하기
 
-###1. 모듈 실행하기
+### 1. 모듈 실행하기
   <img src="{{ "/media/img/chatbot_blogging/26.run_quizbot.png" | absolute_url }}">
 
 
   서버의 5000번포트에서 모듈이 실행중인것을 확인하실 수 있습니다.
 
-###2. 카카오톡 플러스친구 관리자센터 - 스마트채팅 - 앱 URL 설정하기
+### 2. 카카오톡 플러스친구 관리자센터 - 스마트채팅 - 앱 URL 설정하기
 
    다음과 같이 앱 URL에 입력 해 주세요
    > 서버 주소 : flask에서 허용한 포트
@@ -343,14 +343,14 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
    이전과는 다르게 에러가 발생하지 않습니다.
 
 
-###3. 관리 - 상세설정 - 플러스친구 공개설정하기
+### 3. 관리 - 상세설정 - 플러스친구 공개설정하기
 
    <img src="{{ "/media/img/chatbot_blogging/30.kakaotalk_settings.png" | absolute_url }}">
 
    챗봇이 완성됐습니다. 이제 플러스친구 이용이 가능해졌습니다.
 
 
-###4. 플러스친구 추가 후 확인해보기
+### 4. 플러스친구 추가 후 확인해보기
 
     <img src="{{ "/media/img/chatbot_blogging/31.output.png" | absolute_url }}">
 
@@ -359,3 +359,4 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
   - https://github.com/plusfriend/auto_reply
   - http://aidev.co.kr/chatbotdev/1268
   - https://github.com/TEAMLAB-Lecture/database-101
+  -https://docs.aws.amazon.com/ko_kr/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html
