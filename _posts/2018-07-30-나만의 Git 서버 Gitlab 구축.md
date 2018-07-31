@@ -1,9 +1,14 @@
 ---
-
-layout: post title: "나만의 git 서버 - 간단 git lab 만들기" date: 2018-07-30 17:00:00 +0300 tags: git, gitlab, git server category: Tutorials math: true author: Chanwoo Jeong published: true
-
-comments: true
---------------
+layout:         post 
+title:          "나만의 git 서버 - 간단 git lab 만들기" 
+date:           2018-07-30 17:00:00 +0300 
+tags:           git, gitlab, git_server 
+category:       Tutorials 
+author:         Chanwoo Jeong 
+math:           true 
+published:      true
+comments:       true
+---
 
 ### 나만의 git 서버 git lab 만들기
 
