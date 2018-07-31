@@ -61,6 +61,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 1. 탄력적 IP 할당하기
 
    탄력적 IP를 클릭해 탄력적 IP 페이지로 이동 해 주세요
+   
    <img src="{{ "/media/img/chatbot_blogging/8.elastic_ip.png" | absolute_url }}">
 
    새 주소 할당을 클릭합니다.
@@ -304,7 +305,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 
   3. 사용자의 요청이 정답인지, 아닌지에 대해 반응하는 코드를 작성 해 줍니다.
-     > 퀴즈봇 예제의 경우 list에 하나씩 할당하기 보다 dict를 사용하게되면 직관적이고, 효율적인 코드를 구현할 수 있습니다.
+     > 본 튜토리얼의 경우 list에 하나씩 할당하기 보다 dict를 사용하게되면 직관적이고, 효율적인 코드를 구현할 수 있습니다.
 
 
          quiz_dict = {'python_quiz_buttons' : ['Guido van Rossum', 'Mark Elliot Zuckerberg', 'Geoffrey Everest Hinton', 'Yann LeCun', 'Andrew Ng'],
