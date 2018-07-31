@@ -10,13 +10,15 @@ published:         true
 comments:          true
 ---
 
-이 포스팅은 자연어 처리 없이 파이썬의 리스트로 사용자의 입력값을 비교해 응답하는 챗봇을 구현하는 튜토리얼입니다.
+
+이 포스팅은 자연어 처리 없이 사용자의 입력값을 비교해 응답하는 챗봇을 구현하는 튜토리얼입니다.
 사용한 파이썬 모듈은 flask 이며, aws 서버를 사용했습니다. aws 인스턴스 생성에서부터 카카오톡 플러스친구와 연동하는 방법까지 차례대로 말씀드리도록 하겠습니다.
 
 
 ## 1. AWS 가입하기 및 인스턴스 생성, 설정하기
 
 ### 1. AWS 가입하기
+
 AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영상을 참고해 회원가입을 진행하시는 것을 권장드립니다.
  - [초보자를 위한 AWS 클라우드 시작하기 - aws 가입하기 및 프리티어 소개 ](https://www.inflearn.com/course/aws-%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/)
 
@@ -25,6 +27,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
  - [대학생을 위한 AWS 클라우드 시작하기 - aws 가입하기 및 프리티어 소개 ](https://www.inflearn.com/unit/%eb%8c%80%ed%95%99%ec%83%9d%ec%9d%84-%ec%9c%84%ed%95%9c-aws-educate-%ea%b0%80%ec%9e%85%eb%b0%a9%eb%b2%95/)
 
  회원가입을 마치셨다면, 인스턴스를 생성 해 보도록 하겠습니다.
+
 
 ### 2. 인스턴스 생성하기
 
@@ -130,6 +133,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
   1. 개설이 완료되었다면 상세설정페이지의 스마트채팅 페이지로 이동 한 뒤 API형을 선택합니다.
   
+
      <img src="{{ "/media/img/chatbot_blogging/21.choice_faq.png" | absolute_url }}">
 
 
@@ -146,7 +150,6 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
          2. 프로세스가 구동중이지 않으며 
          3. 코드를 작성하지않아 keyboard initialize가 되지 않았기 때문에 에러가 발생합니다.
          만약 에러가 발생하게된다면 포트설정, 프로세스 구동 확인, 응답에 해당하는 코드 확인을 해 보시는것을 권장 드립니다.
-
 
 
 
@@ -262,8 +265,8 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 
 
-### 1. keyboard initialize
 
+### 1. keyboard initialize
 
     default_buttons = ['파이썬 퀴즈', '웹 퀴즈', '컴퓨터 퀴즈']
 
@@ -275,6 +278,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
         })
 
   - 사용자가 최초로 채팅방에 접속시 보여 줄 버튼을 설정 해 줍니다.
+  - jsonify 모듈을 통해 데이터를 json 으로 인코딩 해 api에 전달합니다.
   - default_buttons 라는 변수에 버튼을 저장해 처음과 마지막 응답에 사용할 예정입니다.
 
 
@@ -308,7 +312,6 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
   3. 사용자의 요청이 정답인지, 아닌지에 대해 반응하는 코드를 작성 해 줍니다.
      > 본 튜토리얼의 경우 list에 하나씩 할당하기 보다 dict를 사용하게되면 직관적이고, 효율적인 코드를 구현할 수 있습니다.
-
 
          quiz_dict = {'python_quiz_buttons' : ['Guido van Rossum', 'Mark Elliot Zuckerberg', 'Geoffrey Everest Hinton', 'Yann LeCun', 'Andrew Ng'],
          'web_quiz_buttons': ["HTML", "XML", "XHTML", "MXML", "JSON"],
@@ -346,8 +349,11 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
                  }
                }
 
-
-  4.  마지막으로 flask 모듈을 사용해 스크립트를 구동하도록 하겠습니다.
+         return jsonify(response_data)
+         
+      - keyboard initialize와 마찬가지로 데이터를 json으로 인코딩 해 api에 전달합니다.
+     
+  4.  마지막으로 flask 모듈을 사용해 챗봇 서버를 구동하도록 하겠습니다.
       > port 변수에 할당한 포트번호는  카카오톡 api에게 허용하는 포트입니다.
 
            app = Flask(__name__)
@@ -364,7 +370,9 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ## 3. 카카오톡과 연동하기
 
 ### 1. 모듈 실행하기
-   >python 모듈 이름
+
+   python으로 모듈을 실행합니다.
+   > python 모듈이름
 
    <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
 
@@ -384,7 +392,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
    <img src="{{ "/media/img/chatbot_blogging/30.kakaotalk_settings.png" | absolute_url }}">
 
-   챗봇이 완성됐습니다. 이제 플러스친구 이용이 가능해졌습니다.
+   챗봇이 완성됐습니다. 이제 플러스친구 이용이 가능합니다. 
 
 
 ### 4. 플러스친구 추가 후 확인해보기
