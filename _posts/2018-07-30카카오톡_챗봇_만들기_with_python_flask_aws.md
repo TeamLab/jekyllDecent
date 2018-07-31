@@ -96,6 +96,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
   > 보안그룹 설정은 접근을 허용할 소스, 프로토콜, 포트범위 등을 설정하는 작업입니다.
 
 1. 보안그룹 설정하기
+
    <img src="{{ "/media/img/chatbot_blogging/15.inbound_rule.png" | absolute_url }}">
 
    인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
