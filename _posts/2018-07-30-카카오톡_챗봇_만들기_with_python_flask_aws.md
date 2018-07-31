@@ -359,7 +359,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 ### 1. 모듈 실행하기
    python으로 모듈을 실행합니다.
-   > python 만든 모듈
+   > python 모듈이름
 
    <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
 
