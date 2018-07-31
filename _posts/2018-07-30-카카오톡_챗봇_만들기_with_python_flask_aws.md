@@ -50,7 +50,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
     *키페어를 잃어버리지 않도록 이동식 장치 등에 보관 하시는것을 권장드립니다.*
 
-6. 여러분들의 인스턴스가 생성되었습니다!
+6. 인스턴스가 생성되었습니다!
 
    <img src="{{ "/media/img/chatbot_blogging/6.instance_started.png" | absolute_url }}">
 
@@ -68,7 +68,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
    <img src="{{ "/media/img/chatbot_blogging/9.new_address.png" | absolute_url }}">
 
-   할당버튼을 누르시면 IP주소가 할당됩니다.
+   할당버튼을 눌러 IP주소를 할당 해 주세요.
    
    <img src="{{ "/media/img/chatbot_blogging/10.new_address_succeed.png" | absolute_url }}">
 
@@ -100,7 +100,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
    <img src="{{ "/media/img/chatbot_blogging/15.inbound_rule.png" | absolute_url }}">
 
-   인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
+   인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 IP주소로 ssh 연결을 하실 수 있습니다!
 
 
 ## 2. 플러스친구 개설하기
@@ -364,6 +364,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ## 3. 카카오톡과 연동하기
 
 ### 1. 모듈 실행하기
+   >python 모듈 이름
 
    <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
 
