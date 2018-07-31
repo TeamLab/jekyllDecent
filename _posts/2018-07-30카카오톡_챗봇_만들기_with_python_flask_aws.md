@@ -86,7 +86,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
    <img src="{{ "/media/img/chatbot_blogging/13.connect_address2.png" | absolute_url }}">
 
-3.  이제 고정적인 IP주소가 생겼습니다!
+3. 이제 고정적인 IP주소가 생겼습니다!
    
    <img src="{{ "/media/img/chatbot_blogging/14.succeed_connect_address.png" | absolute_url }}">
 
@@ -103,7 +103,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
    인스턴스 생성 및 설정을 마쳤습니다. 이제 고정적인 ip주소로 ssh 연결을 하실 수 있습니다!
 
 
-## 2 플러스친구 개설하기
+## 2. 플러스친구 개설하기
 
 ### 1. 플러스친구 등록하기
 
