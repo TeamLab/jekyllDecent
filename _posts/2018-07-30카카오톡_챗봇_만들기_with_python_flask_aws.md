@@ -46,7 +46,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 5. 세부정보 구성을 생략하고, 바로 검토 및 시작으로 이동 한 뒤 키페어를 생성/선택 해 주세요.
 
-    <img src="{{ "/media/img/chatbot_blogging/5.make_key.png" | absolute_url }}">
+   <img src="{{ "/media/img/chatbot_blogging/5.make_key.png" | absolute_url }}">
 
     *키페어를 잃어버리지 않도록 이동식 장치 등에 보관 하시는것을 권장드립니다.*
 
@@ -362,6 +362,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ## 3. 카카오톡과 연동하기
 
 ### 1. 모듈 실행하기
+
    <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
 
    서버의 5000번포트에서 모듈이 실행중인것을 확인하실 수 있습니다.
