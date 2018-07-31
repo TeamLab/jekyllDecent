@@ -32,9 +32,8 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
     <img src="{{ "/media/img/chatbot_blogging/1.aws_console.png" | absolute_url }}">
     
- 콘솔에서
 
-2. EC2로 이동 한 뒤, 인스턴스 시작을 클릭 해 주세요
+2. EC2를 클릭해 이동 한 뒤, 인스턴스 시작을 클릭 해 주세요
 
     <img src="{{ "/media/img/chatbot_blogging/2.EC2.png" | absolute_url }}">
 
