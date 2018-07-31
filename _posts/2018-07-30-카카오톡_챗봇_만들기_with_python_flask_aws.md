@@ -63,9 +63,11 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 1. 탄력적 IP 할당하기
 
       <img src="{{ "/media/img/chatbot_blogging/8.elastic_ip.png" | absolute_url }}">
+      
       새 주소 할당을 클릭합니다.
         
       <img src="{{ "/media/img/chatbot_blogging/9.new_addres.png" | absolute_url }}">
+      
       할당버튼을 눌러 IP주소를 할당 해 주세요.
         
       <img src="{{ "/media/img/chatbot_blogging/10.new_addres_succeed.png" | absolute_url }}">
@@ -86,7 +88,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
       <img src="{{ "/media/img/chatbot_blogging/14.succeed_connect_address.png" | absolute_url }}">
 
-    주소연결까지 마치셨다면, 마지막으로 보안그룹 설정을 해 주셔야 합니다.
+      주소연결까지 마치셨다면, 마지막으로 보안그룹 설정을 해 주셔야 합니다.
 
 
 ### 4. 보안그룹 설정하기
@@ -359,7 +361,6 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ### 1. 모듈 실행하기
 
    <img src="{{ "/media/img/chatbot_blogging/26.run_quizbit.png" | absolute_url }}">
-
 
    서버의 5000번포트에서 모듈이 실행중인것을 확인하실 수 있습니다.
 
