@@ -26,7 +26,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
  회원가입을 마치셨다면, 인스턴스를 생성 해 보도록 하겠습니다.
 
- ### 2. 인스턴스 생성하기
+### 2. 인스턴스 생성하기
 
 1. 콘솔로 이동 해 주세요
 
@@ -105,6 +105,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 ## 2 플러스친구 개설하기
 
 ### 1. 플러스친구 등록하기
+
   1. [플러스친구 관리자센터](https://center-pf.kakao.com/)로 이동 해 주세요
   
      <img src="{{ "/media/img/chatbot_blogging/16.plus_friend_admin.png" | absolute_url }}">
@@ -150,7 +151,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 [카카오톡 플러스친구 API 기술문서](https://github.com/plusfriend/auto_reply)와 [파이썬과 flask로 만든 간단한 카카오톡챗봇](http://aidev.co.kr/chatbotdev/1268)을 참고해 챗봇을 구현했습니다.
 
-  ### 0. Overview
+### 0. Overview
 
   - 구현할 챗봇은 버튼형으로 오지선다로 퀴즈를 내고, 정답이면 알려주는 챗봇입니다.
   - 시나리오는 다음과 같습니다.
@@ -258,7 +259,7 @@ AWS가 처음이신 분들은 Amazon Web Service Korea 에서 제공하는 영�
 
 
 
- ### 1. keyboard initialize
+### 1. keyboard initialize
 
 
     default_buttons = ['파이썬 퀴즈', '웹 퀴즈', '컴퓨터 퀴즈']
