@@ -1,9 +1,14 @@
 ---
-
-layout: post title: 나만의 git 서버 - 간단 git lab 만들기 date: 2018-07-30 17:00:00 +0300 tags: git, gitlab category: Tutorials author: Chanwoo Jeong math: true published: true
-
+layout: post 
+title: "나만의 git 서버 - 간단 git lab 만들기" 
+date: 2018-07-30 17:00:00 +0300 
+tags: git, gitlab, git_server 
+category: Tutorials 
+author: ChanwooJeong 
+math: true 
+published: true
 comments: true
---------------
+---
 
 ### 나만의 git 서버 git lab 만들기
 
@@ -117,10 +122,7 @@ ip 또는 localhost 둘 중 하나를 입력 후 포트 번호는 80번, 8080을
 
 2) gitlab_workhorse & unicorn
 
-```
-gitlab_workhorse는 Gitlab의 역방향 프록시를 담당한다. 즉, 우리가 일반적으로 볼 수 있는 git의 push/ pull, Repository 다운로드, 업로드와 같은 HTTP 요청을 처리한다.
-화면에서 esc를 누른 후 / 누르고 8080 을 입력하면 쉽게 찾을 수 있다.
-```
+gitlab_workhorse는 Gitlab의 역방향 프록시를 담당한다. 즉, 우리가 일반적으로 볼 수 있는 git의 push/ pull, Repository 다운로드, 업로드와 같은 HTTP 요청을 처리한다. 화면에서 esc를 누른 후 / 누르고 8080 을 입력하면 쉽게 찾을 수 있다.
 
 -	주의 이 부분과 아래의 unicorn 부분의 포트는 80, 8080 포트를 피하여, 반드시 위의 external_url에서 설정한 포트와 다르게 설정하도록 한다. 웹 페이지와 http, 인증 관련된 내용이 충돌 할 수 있다. gitlab_workhorse 과 unicorn 의 포트 번호는 동일하다.
 
@@ -174,7 +176,7 @@ http://external_url
 ```
 
 <figure>
-   <img src="{{ "/media/img/git_lab_initial.png" | absolute_url }}" />
+   <img src="{{ "/media/img/gitlab_initial.png" | absolute_url }}" />
    <figcaption>git_lab 초기 접속</figcaption>  
 </figure>
 
