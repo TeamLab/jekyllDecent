@@ -1,7 +1,7 @@
 ---
 layout:            post
 title:             "Django Admin 예쁘게 활용하기"
-date:              2018-07-30 18:30:00 +0300
+date:              2018-08-01 18:30:00 +0300
 tags:              django, admin, 장고, 어드민
 category:          Tutorials
 author:            kimjinhong
@@ -23,7 +23,7 @@ Django는 사이트 관리자가 컨텐츠를 편집할 수 있는 통합적인 
 운영 중인 서버가 있는 독자 분들께서는 운영하고 계신 데이터베이스를 이용하시면 됩니다.  
 제가 사용한 Employee data는 [여기](https://dev.mysql.com/doc/employee/en/) 에서 받을 수 있습니다.
 <figure>
-   <img src="{{ "/media/img/django_admin/employees_schema.png" | absolute_url }}" />
+   <img src="{{ "/media/img/django_admin/employees-schema.png" | absolute_url }}" />
    <figcaption>Employees schema</figcaption>
 </figure>
 
@@ -197,10 +197,10 @@ class EmployeesAdmin(admin.ModelAdmin):
 - Past 7 days
 - This month
 - This year  
-
+>
 > 그러나 현실에서는 날짜의 범위를 지정하여 필터링하는 경우가 더 많기 때문에, 기간 설정 필터링을 지원하는 패키지를 설치하여줍니다.  
 다양한 date range filter 패키지가 있지만 저는 [django-admin-rangefilter](https://github.com/silentsokolov/django-admin-rangefilter) 를 설치하였습니다.  
-
+>
 > 설치 방법은 `pip`를 이용하여 패키지를 설치한 후  `INSTALLED_APPS`에 추가하여주면 됩니다.
 ```python
 # command 창
@@ -214,7 +214,6 @@ INSTALLED_APPS = (
     ...
 )
 ```
-
 > 이용 방법은 아래와 같습니다.  
 ```python
 # admin.py
