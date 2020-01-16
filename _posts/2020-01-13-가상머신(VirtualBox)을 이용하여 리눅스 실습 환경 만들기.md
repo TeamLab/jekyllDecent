@@ -38,87 +38,87 @@ comments: true
 
 ### VirtualBox 설치
 구글에서 VirtualBox를 검색하여 VirtualBox 홈페이지를 선택합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72217645-23b89800-3574-11ea-9e87-223fd75f2370.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72217645-23b89800-3574-11ea-9e87-223fd75f2370.PNG"><br>
 <br>왼쪽 메뉴에서 Downloads를 선택하여 Windows hosts를 클릭하면 VirtualBox가 다운로드 됩니다. 아래 All supported platforms를 클릭하여 확장팩도 다운로드 합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72218125-c6741500-357a-11ea-88e6-8d8db32aa0c0.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72218125-c6741500-357a-11ea-88e6-8d8db32aa0c0.PNG"><br>
 
 ### Ubuntu iso 파일 다운로드
 <br>구글에서 Ubuntu를 검색하여 Download Ubuntu Desktop을 선택합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72218534-00dfb100-357f-11ea-90ef-5fe8d4f2b4fa.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72218534-00dfb100-357f-11ea-90ef-5fe8d4f2b4fa.PNG"><br>
 <br>Download 클릭하여 Ubuntu iso 파일을 다운로드 합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72218563-44d2b600-357f-11ea-9cbb-4ed41a87e7d5.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72218563-44d2b600-357f-11ea-9cbb-4ed41a87e7d5.PNG"><br>
 
 ### VirtualBox 설치 과정과 환경설정
 <br>VirtualBox 설치파일을 더블클릭하여 설치를 시작합니다. 다음 화면까지 계속 Next, Yes, install 해주세요.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223037-5b443600-35ae-11ea-9c04-89de4766b159.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223037-5b443600-35ae-11ea-9c04-89de4766b159.PNG"><br>
 
 <br>VirtualBox에서 USB 장치를 인식하기 위해 필요합니다. 설치를 해줍니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223054-86c72080-35ae-11ea-97d1-39e5fc0d96ab.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223054-86c72080-35ae-11ea-97d1-39e5fc0d96ab.PNG"><br>
 
 <br>Finish 버튼을 클릭하면 VirtualBox가 실행됩니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223055-86c72080-35ae-11ea-8a03-5be912ac5d16.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223055-86c72080-35ae-11ea-8a03-5be912ac5d16.PNG"><br>
 
 <br>VirtualBox에 대한 설정을 하기 위해 환경 설정 버튼을 클릭합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223056-8af33e00-35ae-11ea-9e09-f4bf7b86faeb.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223056-8af33e00-35ae-11ea-9e09-f4bf7b86faeb.PNG"><br>
 
 <br>기본 머신 폴더에서 가상 머신이 저장되는 위치를 변경할 수 있습니다. 초기값을 원한다면 그대로 두시면 됩니다. 그 다음 왼쪽 메뉴에서 입력을 선택합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223057-8b8bd480-35ae-11ea-88e3-dbec998e0657.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223057-8b8bd480-35ae-11ea-88e3-dbec998e0657.PNG"><br>
 
 <br>가상머신 탭을 선택하면 호스트 키 조합의 단축키 Right Control를 한글 윈도우에서는 동작하지 않기 때문에 **Shift+Ctrl**로 재설정합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223058-8b8bd480-35ae-11ea-93f9-4dd217e39a6a.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223058-8b8bd480-35ae-11ea-93f9-4dd217e39a6a.PNG"><br>
 
 <br>왼쪽 메뉴에서 확장을 선택하 오른쪽 +버튼을 클릭하여 VirtualBox 확장 패키지를 선택하고 열기 버튼을 클릭합니다. 그 다음 확장 기능 패키지 설치를 진행하고 설치 완료 후 환경설정에서 확인을 눌러서 나갑니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223059-8b8bd480-35ae-11ea-8ab5-f5cd2acf51d0.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223059-8b8bd480-35ae-11ea-8ab5-f5cd2acf51d0.PNG"><br>
 
 ### Ubuntu를 위한 가상 머신 생성
 가상머신은 윈도우의 하드웨어 자원을 우분투에서 사용할 수 있게 해줍니다. 새로 만들기를 클릭하여 가상머신의 이름을 적어주고 종류와 버전은 다음과 같이 진행합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223060-8b8bd480-35ae-11ea-9872-e8b17a4afe22.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223060-8b8bd480-35ae-11ea-9872-e8b17a4afe22.PNG"><br>
 
 <br>가상머신에서 사용할 메모리 크기를 설정합니다. 초록색 범위 내에서 선택해야 합니다. (우분투의 최소 요구량은 2기가입니다. 메모리 여유가 있다면 더 크게 해도 됩니다.)<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223101-ee7d6b80-35ae-11ea-991f-6b32df5e4a69.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223101-ee7d6b80-35ae-11ea-991f-6b32df5e4a69.PNG"><br>
 
 <br>다음과 같이 계속 진행합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223102-ee7d6b80-35ae-11ea-89de-226f9ee820c2.PNG"></img><br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223103-ef160200-35ae-11ea-8a29-02fd42989eb7.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223102-ee7d6b80-35ae-11ea-89de-226f9ee820c2.PNG"><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223103-ef160200-35ae-11ea-8a29-02fd42989eb7.PNG"><<br>
 
 <br>하드 공간 절약을 원한다면 동적할당, 빠른 속도를 원한다면 고정 크기를 선택하세요.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223104-ef160200-35ae-11ea-9d1d-7f6a06464392.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223104-ef160200-35ae-11ea-9d1d-7f6a06464392.PNG"><br>
 
 <br>가상 하드 디스크에서 사용할 크기를 지정합니다. (우분투의 최소 요구량은 25기가이지만 추가 설치를 대비해 크게 잡는게 좋습니다.) 만들기를 클릭하면 가상머신 생성이 시작됩니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223105-ef160200-35ae-11ea-8b99-fc2f9def3b23.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223105-ef160200-35ae-11ea-8b99-fc2f9def3b23.PNG"><br>
 
 <br>가상머신을 부팅시키기 전에 몇가지 설정을 해줘야 합니다. 설정을 선택하고 왼쪽 메뉴 시스템을 클릭한 후 성능향상을 위해 칩셋을 ICH9로 변경합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223106-efae9880-35ae-11ea-804a-a651d70c13c8.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223106-efae9880-35ae-11ea-804a-a651d70c13c8.PNG"><br>
 
 <br>프로세서 탭을 클릭하여 가상머신이 사용할 프로세서 개수를 초록색 범위 내에서 설정해줍니다.<br>
-<br><img src="(https://user-images.githubusercontent.com/48443734/72223235-f8ec3500-35af-11ea-856b-3d14442cec47.PNG"></img><br>
+<br><img src="(https://user-images.githubusercontent.com/48443734/72223235-f8ec3500-35af-11ea-856b-3d14442cec47.PNG"><br>
 
 <br>왼쪽 디스플레이 메뉴에서 가상머신이 사용할 비디오 메모리 크기를 최대로 올려줍니다. 그리고  3차원 가속을 체크합니다. 2차원 가속은 사용할 수 없습니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223108-efae9880-35ae-11ea-8687-f1023b868ec6.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223108-efae9880-35ae-11ea-8687-f1023b868ec6.PNG"><br>
 
 <br>왼쪽 저장소 메뉴에서 부팅에 사용할 우분투 iso 이미지를 가상광학드라이브에 삽입합니다. (디스크 모양 버튼을 클릭하여 우분투 iso 파일을 열어주세요.)<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223154-651a6900-35af-11ea-828f-82f8d7d5bd44.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223154-651a6900-35af-11ea-828f-82f8d7d5bd44.PNG"><br>
 
 <br>왼쪽 USB 메뉴에서 USB 3.0 컨트롤러로 변경한 후 확인 버튼을 클릭하여 설정을 마칩니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223162-706d9480-35af-11ea-949d-394ac78094e1.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223162-706d9480-35af-11ea-949d-394ac78094e1.PNG"><br>
 
 <br>시작을 클릭하면 가상머신에서 우분투가 부팅됩니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223163-706d9480-35af-11ea-8e4f-cc2ae6308321.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223163-706d9480-35af-11ea-8e4f-cc2ae6308321.PNG"><br>
 
 <br>왼쪽 메뉴에서 한국어를 선택하고 Ubuntu 설치를 클릭한 후 다음화면까지 계속하기 버튼을 클릭합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223164-71062b00-35af-11ea-9fd4-d30e208734c1.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223164-71062b00-35af-11ea-9fd4-d30e208734c1.PNG"><br>
 
 <br>설치 용량을 줄이려면 최소 설치를 선택하세요. 아래 있는 체크 박스를 클릭합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223165-71062b00-35af-11ea-9e51-5d67ae098688.PNG"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223165-71062b00-35af-11ea-9e51-5d67ae098688.PNG"><br>
 
 <br>디스크를 지우고 Ubuntu 설치를 선택하고 진행합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223166-71062b00-35af-11ea-8a81-3e797b889730.png"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223166-71062b00-35af-11ea-8a81-3e797b889730.png"><br>
 
 <br>정보를 입력한 후 계속하기 버튼을 클릭하면 설치가 진행됩니다. 설치가 완료되면 지금 다시 시작을 클릭합니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223167-71062b00-35af-11ea-92ed-057929bb7899.png"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223167-71062b00-35af-11ea-92ed-057929bb7899.png"><br>
 
 <br>재부팅 후 로그인 하면 다음과 같은 화면이 보입니다. 우분투 설치가 완료되었습니다.<br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223168-719ec180-35af-11ea-875d-e75abfe1a68e.png"></img><br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223168-719ec180-35af-11ea-875d-e75abfe1a68e.png"><br>
 
 위의 모든 과정을 마친 후 Windows에서 Linux(Ubuntu)를 사용하는 것을 볼 수 있습니다. 실습 환경이 만들어졌으니 다음과 같은 리눅스 명령어들을 학습합니다.
 
@@ -127,7 +127,7 @@ comments: true
   - **PWD**<br>
   현재 경로 보기
   <pre>$ pwd</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71870559-af3bbe80-3159-11ea-94dc-cf828b629c1a.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71870559-af3bbe80-3159-11ea-94dc-cf828b629c1a.PNG">
   <pre>현재 경로는 /root 라고 표시되어 있다.</pre><br>
 
   - **CD**<br>
@@ -137,7 +137,7 @@ comments: true
       cd .. : 상위 디렉토리로 이동
       cd ~ : 홈 디렉토리로 이동
       cd - : 이전 작업 디렉토리로 이동</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71871481-a7314e00-315c-11ea-80b1-6691f79b4c04.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71871481-a7314e00-315c-11ea-80b1-6691f79b4c04.PNG">
   <pre>~/workspace 로 이동하였다.</pre><br>
 
   - **LS**<br>
@@ -145,7 +145,7 @@ comments: true
   <pre>$ ls {옵션} {디렉토리/파일}
       -a: 모든 파일과 디렉토리 표시
       -l: 자세히 출력</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71872085-af8a8880-315e-11ea-9f8e-c26bdee9cb30.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71872085-af8a8880-315e-11ea-9f8e-c26bdee9cb30.PNG">
   <pre>/workspace 폴더의 모든 파일과 디렉토리를 자세히 출력</pre><br>
 
   - **CP**<br>
@@ -154,7 +154,7 @@ comments: true
       -f: 강제로 복사
       -r: 하위 경로 포함하여 복사
       -v: 복사 진행 상황 출력</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71872088-b0bbb580-315e-11ea-9525-c601a8fb11f2.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71872088-b0bbb580-315e-11ea-9525-c601a8fb11f2.PNG">
   <pre>test1.txt 파일의 내용을 복사하여 test2.txt 파일을 생성함</pre><br>
 
   - **MKDIR**<br>
@@ -163,7 +163,7 @@ comments: true
       -m: 디렉토리 생성 시 기본 권한 설정
       -p: 상위 디렉토리 생성
       --help: 도움말</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71874138-7fde7f00-3164-11ea-8d77-0385432db14c.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71874138-7fde7f00-3164-11ea-8d77-0385432db14c.PNG">
   <pre>mv_test 디렉토리가 생성된 것을 확인</pre><br>
 
   - **MV**<br>
@@ -171,7 +171,7 @@ comments: true
   <pre>$ mv {옵션} {이동소스} {이동타겟}
       -f: 강제로 이동
       -v: 이동 진행 상태 출력</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71874141-810fac00-3164-11ea-975b-baeac4c0fbe8.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71874141-810fac00-3164-11ea-975b-baeac4c0fbe8.PNG">
   <pre>test1.txt를 mv_test 디렉토리로 이동한 것을 확인</pre><br>
 
   - **RM**<br>
@@ -180,7 +180,7 @@ comments: true
       -f: 강제삭제
       -r: 디렉토리 삭제 시 하위 경로와 파일 삭제
       -v: 파일 삭제 정보를 자세히 보여줌</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71874251-cb912880-3164-11ea-885d-0a566b4e9b48.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71874251-cb912880-3164-11ea-885d-0a566b4e9b48.PNG">
   <pre>mv_test 디렉토리가 삭제된 것을 확인</pre><br>
 
   - **CAT**<br>
@@ -188,14 +188,14 @@ comments: true
   <pre>$ cat {옵션} {파일 이름}
       >: 내용 덮어 씌우기
       >>: 기존 파일 내용 추가</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71874592-abae3480-3165-11ea-9f50-1190b9799d2b.PNG"></img>
-  <img src="https://user-images.githubusercontent.com/48443734/71874598-ae108e80-3165-11ea-8c9b-ff04354e1433.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/71874592-abae3480-3165-11ea-9f50-1190b9799d2b.PNG">
+  <img src="https://user-images.githubusercontent.com/48443734/71874598-ae108e80-3165-11ea-8c9b-ff04354e1433.PNG">
   <pre>test2.txt 파일에 내용이 출력된 것을 확인</pre><br>
 
   - **TOUCH**<br>
   비어있는 파일 생성
   <pre>$ touch {파일이름}</pre><br>
-  <img src="https://user-images.githubusercontent.com/48443734/72221195-a56fec00-359b-11ea-8a7b-b747cac85da5.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/72221195-a56fec00-359b-11ea-8a7b-b747cac85da5.PNG">
   <pre>test1.txt가 생성됨</pre><br>
 
   - **HEAD**<br>
@@ -214,7 +214,7 @@ comments: true
     - chown {:변경할그룹이름} – 그룹만 변경
     - chown {변경할유저이름:} – 소유자와 그룹 모두 동일한걸로 변경
     - chown {변경할유저이름:변경할그룹이름} – 소유자와 그룹을 서로 다른걸로 변경</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71878313-ad302a80-316e-11ea-95bb-b588dcc5ba66.PNG"></img><br>
+  <img src="https://user-images.githubusercontent.com/48443734/71878313-ad302a80-316e-11ea-95bb-b588dcc5ba66.PNG"><br>
   <per>빨간색 선 기준으로 왼쪽은 소유자, 오른쪽은 그룹</per><br>
 
   - **CHMOD**<br>
@@ -226,7 +226,7 @@ comments: true
   $ chmod {옵션} {대상}{+/-/=}{rwx} {파일명} – 심볼릭 형태
       -R : 하위 디렉토리에도 모든 권한 변경
       -c : 권한 변경 파일내용을 출력</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/71878246-7e19b900-316e-11ea-9046-7167cbb3fbbe.PNG"></img><br>
+  <img src="https://user-images.githubusercontent.com/48443734/71878246-7e19b900-316e-11ea-9046-7167cbb3fbbe.PNG"><br>
   <per>d는 디렉토리, -는 파일<br>
   3칸 기준으로<br>
   첫번째는 owner
@@ -276,14 +276,14 @@ comments: true
   - **GREP**<br>
   텍스트 검색 기능을 가짐
   <pre>$ grep {검색어} {파일이름}</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/72221491-9a6a8b00-359e-11ea-88d5-eaba8285ec82.PNG"></img>
+  <img src="https://user-images.githubusercontent.com/48443734/72221491-9a6a8b00-359e-11ea-88d5-eaba8285ec82.PNG">
   <pre>test2.txt 파일의 내용에서 TEAM을 검색</pre><br>
 
 - **프로세스**
   - **PS**<br>
   ps(process status) 시스템에서 현재 수행되고 있는 프로세스를 확인<br>
   <pre>$ ps aux</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/72221565-81160e80-359f-11ea-814d-503f52fbf36a.PNG"></img><br>
+  <img src="https://user-images.githubusercontent.com/48443734/72221565-81160e80-359f-11ea-814d-503f52fbf36a.PNG"><br>
 
   - **Kill**<br>
   프로세스를 종료<br>
@@ -294,7 +294,7 @@ comments: true
   - **TOP**<br>
   시스템의 운용사항을 실시간으로 모니터링할 수 있는 유틸리티로, 윈도우의 작업관리자를 연상하면 된다. CPU, 메모리, 프로세스등을 확인할 수 있다.
   <pre>$ top</pre>
-  <img src="https://user-images.githubusercontent.com/48443734/72221604-c9cdc780-359f-11ea-861d-b02ebf993bf0.PNG"></img><br>
+  <img src="https://user-images.githubusercontent.com/48443734/72221604-c9cdc780-359f-11ea-861d-b02ebf993bf0.PNG"><br>
 
   - **Daemon**<br>
   데몬 실행 및 종료
