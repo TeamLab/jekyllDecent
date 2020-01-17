@@ -79,7 +79,7 @@ comments: true
 
 <br>다음과 같이 계속 진행합니다.<br>
 <br><img src="https://user-images.githubusercontent.com/48443734/72223102-ee7d6b80-35ae-11ea-89de-226f9ee820c2.PNG"><br>
-<br><img src="https://user-images.githubusercontent.com/48443734/72223103-ef160200-35ae-11ea-8a29-02fd42989eb7.PNG"><<br>
+<br><img src="https://user-images.githubusercontent.com/48443734/72223103-ef160200-35ae-11ea-8a29-02fd42989eb7.PNG"><br>
 
 <br>하드 공간 절약을 원한다면 동적할당, 빠른 속도를 원한다면 고정 크기를 선택하세요.<br>
 <br><img src="https://user-images.githubusercontent.com/48443734/72223104-ef160200-35ae-11ea-9d1d-7f6a06464392.PNG"><br>
