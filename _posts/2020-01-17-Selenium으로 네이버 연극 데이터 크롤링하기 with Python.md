@@ -168,10 +168,12 @@ driver.get(url)
 <br>
 
 - **태그 존재 여부 확인 기능** : 해당 태그가 존재하는지 확인합니다.
-<pre>from selenium.webdriver.common.by import By
+```python
+from selenium.webdriver.common.by import By
 
 # 사용 예시: (By.CLASS_NAME, 'list_title')
-# CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능</pre>
+# CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능
+```
 <br>
 
 - **일정 시간동안 태그를 기다리는 기능** : 해당 태그를 찾을 때 까지 정해둔 시간동안 기다립니다.
@@ -204,7 +206,9 @@ for i in range(1, pageNum):
 <br>
 
 - **예외 처리 기능** : 해당 태그를 찾을 때 없다면 except TimeoutException만 실행 시킴
-<pre>from selenium.common.exceptions import TimeoutException</pre>
+```python
+from selenium.common.exceptions import TimeoutException
+```
 
 ```python
 except TimeoutException:    # 예외 처리
@@ -225,7 +229,9 @@ finally:
 
 - **Pandas**
 
-<pre>import pandas as pd</pre>
+```python
+import pandas as pd
+```
 
 ```python
 theater_df = pd.DataFrame(theater_list,
