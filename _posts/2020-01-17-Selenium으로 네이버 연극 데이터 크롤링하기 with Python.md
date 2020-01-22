@@ -235,19 +235,20 @@ import pandas as pd
 
 ```python
 theater_df = pd.DataFrame(theater_list,
-                          columns=['연극명', '기간', '장소', '개막일', '폐막일'])
+                          columns=['연극명', '기간', '장소', '개막일', '폐막일', '오픈런'])
 theater_df.index = theater_df.index + 1    # 인덱스 초기값 1로 변경
 theater_df['개막일'] = pd.to_datetime(theater_df['개막일'], format='%y.%m.%d.')
+theater_df['폐막일'] = pd.to_datetime(theater_df['폐막일'], format='%y.%m.%d.')
 theater_df.to_csv('theater_df.csv', mode='w', encoding='utf-8-sig',
                   header=True, index=True)
 ```
 
 theater_list를 Pandas.DataFrame으로 다음과 같이 표현할 수 있다.
 
-![theater_df](https://user-images.githubusercontent.com/48443734/72586367-cab28080-3934-11ea-8e2f-a7df9b4ee6b1.png)
+![theater_df](https://user-images.githubusercontent.com/48443734/72877924-48afc680-3d3d-11ea-8e88-828df67bf9a2.png)
 
 theater_df를 csv 파일의 형태로 저장한다.<br>
-![theater_csv](https://user-images.githubusercontent.com/48443734/72586447-2977fa00-3935-11ea-8092-82aff32730f6.PNG)
+![theater_csv](https://user-images.githubusercontent.com/48443734/72878495-6598c980-3d3e-11ea-8628-0617b17d7467.PNG)
 
 <br>
 
@@ -303,10 +304,18 @@ for i in range(len(theater_list)):
     theater_list[i].append(theater_list[i][1].split('~')[0])
     theater_list[i].append(theater_list[i][1].split('~')[1])
 
+for i in range(len(theater_list)):
+    if theater_list[i][4] == '오픈런':
+        theater_list[i][4] = '50.01.01.'
+        theater_list[i].append('True')
+    else:
+        theater_list[i].append('False')
+
 theater_df = pd.DataFrame(theater_list,
-                          columns=['연극명', '기간', '장소', '개막일', '폐막일'])
+                          columns=['연극명', '기간', '장소', '개막일', '폐막일', '오픈런'])
 theater_df.index = theater_df.index + 1    # 인덱스 초기값 1로 변경
 theater_df['개막일'] = pd.to_datetime(theater_df['개막일'], format='%y.%m.%d.')
+theater_df['폐막일'] = pd.to_datetime(theater_df['폐막일'], format='%y.%m.%d.')
 theater_df.to_csv('theater_df.csv', mode='w', encoding='utf-8-sig',
                   header=True, index=True)
 
