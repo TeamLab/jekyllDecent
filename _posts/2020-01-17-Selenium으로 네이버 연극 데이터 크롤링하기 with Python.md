@@ -16,6 +16,8 @@ comments: true
 
 ## Selenium으로 네이버 연극 데이터 크롤링하기 with Python
 
+![Naver_theater](https://user-images.githubusercontent.com/48443734/72893751-32196780-3d5d-11ea-9ec3-6b5fa24a3409.PNG)
+
 ### Selenium
 Selenium은 웹을 테스트하기 위한 프레임워크입니다. 또한 브라우저를 제어할 수 있기 때문에 로그인이 필요한 웹 사이트나 자바스크립트(JavaScript)로 동적으로 생성되는 웹 사이트의 데이터를 크롤링할 때 매우 유용하게 사용되는 스크래핑 도구입니다.
 
