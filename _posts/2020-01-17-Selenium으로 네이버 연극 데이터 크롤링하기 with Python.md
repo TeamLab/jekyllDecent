@@ -171,10 +171,9 @@ driver.get(url)
 <br>
 
 - **태그 존재 여부 확인 기능** : 해당 태그가 존재하는지 확인합니다.
+
 ```python
 from selenium.webdriver.common.by import By
-
-
 # 사용 예시: (By.CLASS_NAME, 'list_title')
 # CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능
 ```
@@ -211,6 +210,7 @@ for i in range(1, pageNum):
 <br>
 
 - **예외 처리 기능** : 해당 태그를 찾을 때 없다면 except TimeoutException만 실행 시킴
+
 ```python
 from selenium.common.exceptions import TimeoutException
 
@@ -221,6 +221,7 @@ except TimeoutException:    # 예외 처리
 <br>
 
 - **반드시 실행 시키는 기능** : 정상, 예외 처리 둘 중 하나여도 반드시 실행시킴
+
 ```python
 finally:
     driver.quit() # 종료
@@ -229,6 +230,7 @@ finally:
 <br>
 
 - **이미지 크롤링 png 파일 저장**
+
 ```python
 img_data = driver.find_elements_by_class_name('list_thumb')
 
