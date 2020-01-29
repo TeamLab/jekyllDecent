@@ -260,10 +260,12 @@ theater_list를 Pandas.DataFrame으로 다음과 같이 표현할 수 있다.
 ![Theater DataFrame](https://user-images.githubusercontent.com/48443734/72877924-48afc680-3d3d-11ea-8e88-828df67bf9a2.png)
 
 theater_df를 csv 파일의 형태로 저장한다.
+
 ```python
 theater_df.to_csv(f'theater_{_input}_df.csv', mode='w', encoding='utf-8-sig',
                    header=True, index=True)
 ```
+
 ![Theater CSV](https://user-images.githubusercontent.com/48443734/72878495-6598c980-3d3e-11ea-8628-0617b17d7467.PNG)
 
 <br>
