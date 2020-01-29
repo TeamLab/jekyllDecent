@@ -16,6 +16,10 @@ comments: true
 
 ## Selenium으로 네이버 연극 데이터 크롤링하기 with Python
 
+![Naver_theater](https://user-images.githubusercontent.com/48443734/72893751-32196780-3d5d-11ea-9ec3-6b5fa24a3409.PNG)
+
+다음과 같이 보이는 웹페이지에서 연극 데이터를 크롤링 하는 것이 목표입니다. 하지만 이 웹페이지는 다음 버튼을 클릭해야만 하기 때문에 BeautifulSoup만 이용하여 크롤링을 해야한다면 어려움이 생깁니다. 그래서 Selenium을 활용해야 합니다.
+
 ### Selenium
 Selenium은 웹을 테스트하기 위한 프레임워크입니다. 또한 브라우저를 제어할 수 있기 때문에 로그인이 필요한 웹 사이트나 자바스크립트(JavaScript)로 동적으로 생성되는 웹 사이트의 데이터를 크롤링할 때 매우 유용하게 사용되는 스크래핑 도구입니다.
 
@@ -79,16 +83,15 @@ drver.quit()    # 크롬 브라우저 닫기
 
 <br>
 
-- **데이터를 가져오기 위한 주요 함수**<br>
-<br>
+- **데이터를 가져오기 위한 주요 함수**<br><br>
   - **find_element_by_class_name()** : class name이 입력한 값과 일치하는 것 중에서 가장 먼저 발견된 한 개만 가져옴
   - **find_elements_by_class_name()** : class name이 입력한 값과 동일한 모든 것을 리스트로 가져옴
 
 
 ```python
-# 또한 tag, id, css_selector, xpath로도 사용 가능
-# 클래스 명이 list_title인 모든 것을 리스트로 가져와서 mydata에 할당
-mydata = driver.find_element_by_class_name('list_title')
+# tag, id, css_selector, xpath로도 사용 가능
+
+mydata = driver.find_element_by_class_name('list_title')  # 클래스 명이 list_title인 모든 것을 리스트로 가져와서 mydata에 할당
 ```
 
 <br>
@@ -168,10 +171,14 @@ driver.get(url)
 <br>
 
 - **태그 존재 여부 확인 기능** : 해당 태그가 존재하는지 확인합니다.
-<pre>from selenium.webdriver.common.by import By
+```python
+from selenium.webdriver.common.by import By
+
 
 # 사용 예시: (By.CLASS_NAME, 'list_title')
-# CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능</pre>
+# CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능
+```
+
 <br>
 
 - **일정 시간동안 태그를 기다리는 기능** : 해당 태그를 찾을 때 까지 정해둔 시간동안 기다립니다.
@@ -204,9 +211,9 @@ for i in range(1, pageNum):
 <br>
 
 - **예외 처리 기능** : 해당 태그를 찾을 때 없다면 except TimeoutException만 실행 시킴
-<pre>from selenium.common.exceptions import TimeoutException</pre>
-
 ```python
+from selenium.common.exceptions import TimeoutException
+
 except TimeoutException:    # 예외 처리
     print('해당 페이지에 연극 정보가 존재하지 않습니다.')
 ```
@@ -214,8 +221,6 @@ except TimeoutException:    # 예외 처리
 <br>
 
 - **반드시 실행 시키는 기능** : 정상, 예외 처리 둘 중 하나여도 반드시 실행시킴
-
-
 ```python
 finally:
     driver.quit() # 종료
@@ -223,25 +228,41 @@ finally:
 
 <br>
 
+- **이미지 크롤링 png 파일 저장**
+```python
+img_data = driver.find_elements_by_class_name('list_thumb')
+
+for j in img_data:
+            count += 1
+            j.screenshot(f'img/{count}.png')
+```
+
+![Theater IMG](https://user-images.githubusercontent.com/48443734/73162391-074e5b00-4131-11ea-9efa-cd26b27ab940.PNG)
+
+<br>
+
 - **Pandas**
 
-<pre>import pandas as pd</pre>
-
 ```python
+import pandas as pd
+
 theater_df = pd.DataFrame(theater_list,
-                          columns=['연극명', '기간', '장소', '개막일', '폐막일'])
+                          columns=['연극명', '기간', '장소', '개막일', '폐막일', '오픈런'])
 theater_df.index = theater_df.index + 1    # 인덱스 초기값 1로 변경
 theater_df['개막일'] = pd.to_datetime(theater_df['개막일'], format='%y.%m.%d.')
-theater_df.to_csv('theater_df.csv', mode='w', encoding='utf-8-sig',
-                  header=True, index=True)
+theater_df['폐막일'] = pd.to_datetime(theater_df['폐막일'], format='%y.%m.%d.')
 ```
 
 theater_list를 Pandas.DataFrame으로 다음과 같이 표현할 수 있다.
 
-![theater_df](https://user-images.githubusercontent.com/48443734/72586367-cab28080-3934-11ea-8e2f-a7df9b4ee6b1.png)
+![Theater DataFrame](https://user-images.githubusercontent.com/48443734/72877924-48afc680-3d3d-11ea-8e88-828df67bf9a2.png)
 
-theater_df를 csv 파일의 형태로 저장한다.<br>
-![theater_csv](https://user-images.githubusercontent.com/48443734/72586447-2977fa00-3935-11ea-8092-82aff32730f6.PNG)
+theater_df를 csv 파일의 형태로 저장한다.
+```python
+theater_df.to_csv(f'theater_{_input}_df.csv', mode='w', encoding='utf-8-sig',
+                   header=True, index=True)
+```
+![Theater CSV](https://user-images.githubusercontent.com/48443734/72878495-6598c980-3d3e-11ea-8628-0617b17d7467.PNG)
 
 <br>
 
@@ -250,7 +271,7 @@ theater_df를 csv 파일의 형태로 저장한다.<br>
 
 ```python
 from urllib.parse import quote_plus    # 한글 텍스트를 퍼센트 인코딩으로 변환
-from selenium import webdriver    # 라이브러리에서 사용하는 모듈만 호출
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait   # 해당 태그를 기다림
 from selenium.webdriver.support import expected_conditions as EC
@@ -258,8 +279,10 @@ from selenium.common.exceptions import TimeoutException    # 태그가 없는 �
 import time
 import pandas as pd
 
-user_input = quote_plus(input('''-월--일, -월, 이번주, 이번주말 중 선택하여 입력해주세요.
-                                 (-은 숫자 입력, 이번년도만 가능) : '''))
+_input = input('''-월--일, -월, 이번주, 이번주말 중 선택하여 입력해주세요.
+                                 (-은 숫자 입력, 이번년도만 가능) : ''')
+user_input = quote_plus(_input)
+
 url = f'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query={user_input}%20%EC%97%B0%EA%B7%B9%20%EA%B3%B5%EC%97%B0'
 chromedriver = '/home/leejiheon/workspace/crawling/chromedriver'
 
@@ -274,18 +297,24 @@ driver.get(url)
 try:    # 정상 처리
     element = WebDriverWait(driver, 3).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'list_title'))
-    )    # 해당 태그 존재 여부를 확인하기까지 3초 기다림
+    )    # 해당 태그 존재 여부를 확인하기까지 3초 정지
     theater_list = []
     pageNum = int(driver.find_element_by_class_name('_totalCount').text)
-
+    count = 0
+    
     for i in range(1, pageNum):
         theater_data = driver.find_elements_by_class_name('list_title')
+        img_data = driver.find_elements_by_class_name('list_thumb')
 
         for k in theater_data:
             theater_list.append(k.text.split('\n'))
-
+        
+        for j in img_data:  # 이미지 크롤링
+            count += 1
+            j.screenshot(f'img/{count}.png')
+        
         driver.find_element_by_xpath("//a[@class='btn_page_next _btnNext on']").click()
-        time.sleep(2)
+        time.sleep(2) # 웹페이지를 불러오기 위해 2초 정지
 
 except TimeoutException:    # 예외 처리
     print('해당 페이지에 연극 정보가 존재하지 않습니다.')
@@ -297,12 +326,20 @@ for i in range(len(theater_list)):
     theater_list[i].append(theater_list[i][1].split('~')[0])
     theater_list[i].append(theater_list[i][1].split('~')[1])
 
+for i in range(len(theater_list)):
+    if theater_list[i][4] == '오픈런':
+        theater_list[i][4] = '50.01.01.'
+        theater_list[i].append('True')
+    else:
+        theater_list[i].append('False')
+
 theater_df = pd.DataFrame(theater_list,
-                          columns=['연극명', '기간', '장소', '개막일', '폐막일'])
+                          columns=['연극명', '기간', '장소', '개막일', '폐막일', '오픈런'])
 theater_df.index = theater_df.index + 1    # 인덱스 초기값 1로 변경
 theater_df['개막일'] = pd.to_datetime(theater_df['개막일'], format='%y.%m.%d.')
-theater_df.to_csv('theater_df.csv', mode='w', encoding='utf-8-sig',
-                  header=True, index=True)
+theater_df['폐막일'] = pd.to_datetime(theater_df['폐막일'], format='%y.%m.%d.')
+theater_df.to_csv(f'theater_{_input}_df.csv', mode='w', encoding='utf-8-sig',
+                   header=True, index=True)
 
 print('웹 크롤링이 완료되었습니다.')
 
