@@ -171,10 +171,9 @@ driver.get(url)
 <br>
 
 - **태그 존재 여부 확인 기능** : 해당 태그가 존재하는지 확인합니다.
+
 ```python
 from selenium.webdriver.common.by import By
-
-
 # 사용 예시: (By.CLASS_NAME, 'list_title')
 # CSS_SELECTOR, ID, NAME, TAG_NAME 로도 가능
 ```
@@ -211,6 +210,7 @@ for i in range(1, pageNum):
 <br>
 
 - **예외 처리 기능** : 해당 태그를 찾을 때 없다면 except TimeoutException만 실행 시킴
+
 ```python
 from selenium.common.exceptions import TimeoutException
 
@@ -221,6 +221,7 @@ except TimeoutException:    # 예외 처리
 <br>
 
 - **반드시 실행 시키는 기능** : 정상, 예외 처리 둘 중 하나여도 반드시 실행시킴
+
 ```python
 finally:
     driver.quit() # 종료
@@ -229,6 +230,7 @@ finally:
 <br>
 
 - **이미지 크롤링 png 파일 저장**
+
 ```python
 img_data = driver.find_elements_by_class_name('list_thumb')
 
@@ -258,10 +260,12 @@ theater_list를 Pandas.DataFrame으로 다음과 같이 표현할 수 있다.
 ![Theater DataFrame](https://user-images.githubusercontent.com/48443734/72877924-48afc680-3d3d-11ea-8e88-828df67bf9a2.png)
 
 theater_df를 csv 파일의 형태로 저장한다.
+
 ```python
 theater_df.to_csv(f'theater_{_input}_df.csv', mode='w', encoding='utf-8-sig',
                    header=True, index=True)
 ```
+
 ![Theater CSV](https://user-images.githubusercontent.com/48443734/72878495-6598c980-3d3e-11ea-8628-0617b17d7467.PNG)
 
 <br>
