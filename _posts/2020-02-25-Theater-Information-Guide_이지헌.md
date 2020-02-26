@@ -350,29 +350,10 @@ CREATE TABLE comments(
 
 <br>
 
-4. Django로 Mysql과 연동하여 Database와 Front-end를 연결 후 Django Form을 이용하여 검색 기능을 구현하고 Pagination, 인기순, 최신순과 같은 각 기능들을 구현하기 위한 jQuery ajax 코드를 작성합니다.
+4. Django로 Mysql과 연동하여 Database와 Front-end를 연결 후 Django Form을 이용하여 검색 기능을 구현하고 Pagination, 인기순, 최신순과 같은 각 기능들을 구현하기 위한 jQuery ajax 코드를 작성합니다. 특정 기능을 구현한 코드만 업로드했으며 전체적인 코드는 아래 링크에서 확인할 수 있습니다.
 > https://github.com/Jiheon-Lee/teamlab_2019_winter/tree/master/Week_5
 
 ## Django project code
-
-- **Theaters_index**
-
-> views
-
-```Python
-from django.shortcuts import render
-from Theater_Information_Guide.models import TheatersDetails
-
-
-def theaters_index(request):
-    theaters_data = TheatersDetails.objects.select_related().all()[:6]
-    context = {
-        'theaters_data': theaters_data
-    }
-    return render(request, "theaters_index.html", context)
-```
-
-<br>
 
 - **change_option, change_page**
 
