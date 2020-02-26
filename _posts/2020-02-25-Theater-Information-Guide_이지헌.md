@@ -355,89 +355,7 @@ CREATE TABLE comments(
 
 ## Django project code
 
-- **change_option, change_page**
-
-> views
-
-```Python
-from Theater_Information_Guide.models import TheatersDetails
-from django.http import JsonResponse
-
-
-def change_option(request):
-    option = request.GET['option']
-
-    if option == 'popular-order':
-        theaters_data = TheatersDetails.objects.select_related().all()[:6]
-    elif option == 'latest-order':
-        theaters_data = TheatersDetails.objects.select_related().all().order_by('-theaterid__openingday')[:6]
-    elif option == 'name-order':
-        theaters_data = TheatersDetails.objects.select_related().all().order_by('theaterid__theatername')[:6]
-
-    data = []
-    for i in theaters_data:
-        data_dict = dict()
-        data_dict['id'] = i.theaterid.theaterid
-        data_dict['name'] = i.theaterid.theatername
-        data_dict['price'] = i.price
-        data_dict['period'] = i.theaterid.period
-        data_dict['place'] = i.theaterid.place
-        data_dict['image'] = i.image
-        data.append(data_dict)
-
-    context = {
-        'theater_data': data
-    }
-    return JsonResponse(context)
-
-
-def change_page(request):
-    page = request.GET['page']
-    option = request.GET['option']
-
-    if option == 'popular-order':
-        theaters_data = TheatersDetails.objects.select_related().all()
-        if page == 'page-01':
-            theaters_data = theaters_data[:6]
-        elif page == 'page-02':
-            theaters_data = theaters_data[6:12]
-        elif page == 'page-03':
-            theaters_data = theaters_data[12:16]
-    elif option == 'latest-order':
-        theaters_data = TheatersDetails.objects.select_related().all().order_by('-theaterid__openingday')
-        if page == 'page-01':
-            theaters_data = theaters_data[:6]
-        elif page == 'page-02':
-            theaters_data = theaters_data[6:12]
-        elif page == 'page-03':
-            theaters_data = theaters_data[12:16]
-    elif option == 'name-order':
-        theaters_data = TheatersDetails.objects.select_related().all().order_by('theaterid__theatername')
-        if page == 'page-01':
-            theaters_data = theaters_data[:6]
-        elif page == 'page-02':
-            theaters_data = theaters_data[6:12]
-        elif page == 'page-03':
-            theaters_data = theaters_data[12:16]
-
-    data = []
-    for i in theaters_data:
-        data_dict = dict()
-        data_dict['id'] = i.theaterid.theaterid
-        data_dict['name'] = i.theaterid.theatername
-        data_dict['price'] = i.price
-        data_dict['period'] = i.theaterid.period
-        data_dict['place'] = i.theaterid.place
-        data_dict['image'] = i.image
-        data.append(data_dict)
-
-    context = {
-        'theater_data': data
-    }
-    return JsonResponse(context)
-```
-
-<br>
+- **Change option**
 
 > jQuery ajax
 
@@ -457,55 +375,18 @@ $(document).ready(function () {
                 $("div").remove("#theater_body");
                 for (var i = 0; i < num; i++) {
                     $("#change-option").append(
-                        '<div class="col-md-4" id="theater_body">' +
-                        '<div class="card-box-a card-shadow">' +
-                        '<div class="img-box-a">' +
-                        '<img src="' +
-                        '/static/'
-                        + opt_data[i].image +
-                        '" alt="" class="img-a img-fluid">' +
-                        '</div>' +
-                        '<div class="card-overlay">' +
-                        '<div class="card-overlay-a-content">' +
-                        '<div class="card-header-a">' +
-                        '<h2 class="card-title-a">' +
-                        '<a>' + opt_data[i].id + '위' +
-                        '<br/>' + opt_data[i].name + '</a>' +
-                        '</h2>' +
-                        '</div>' +
-                        '<div class="card-body-a">' +
-                        '<div class="price-box d-flex">' +
-                        '<span class="price-a">Price | $ ' + opt_data[i].price + '</span>' +
-                        '</div>' +
-                        '<a href="/theaters/' +
-                        opt_data[i].id +
-                        '/" class="link-a">Click here to view' +
-                        '<span class="ion-ios-arrow-forward"></span>' +
-                        '</a>' +
-                        '</div>' +
-                        '<div class="card-footer-a">' +
-                        '<ul class="card-info d-flex justify-content-around">' +
-                        '<li>' +
-                        '<h4 class="card-info-title">기간</h4>' +
-                        '<span>' + opt_data[i].period + '</span>' +
-                        '</li>' +
-                        '<li>' +
-                        '<h4 class="card-info-title">장소</h4>' +
-                        '<span>' + opt_data[i].place + '</span>' +
-                        '</li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>'
+                        <!-- html code -->
                     );
                 }
             }
         });
     });
 });
+```
 
+- **Pagination**
+
+```javascript
 $(document).ready(function () {
     $(".page-item").on("click", function () {
 
@@ -547,115 +428,13 @@ $(document).ready(function () {
                 $("div").remove("#theater_body");
                 for (var i = 0; i < num; i++) {
                     $("#change-option").append(
-                        '<div class="col-md-4" id="theater_body">' +
-                        '<div class="card-box-a card-shadow">' +
-                        '<div class="img-box-a">' +
-                        '<img src="' +
-                        '/static/'
-                        + opt_data[i].image +
-                        '" alt="" class="img-a img-fluid">' +
-                        '</div>' +
-                        '<div class="card-overlay">' +
-                        '<div class="card-overlay-a-content">' +
-                        '<div class="card-header-a">' +
-                        '<h2 class="card-title-a">' +
-                        '<a>' + opt_data[i].id + '위' +
-                        '<br/>' + opt_data[i].name + '</a>' +
-                        '</h2>' +
-                        '</div>' +
-                        '<div class="card-body-a">' +
-                        '<div class="price-box d-flex">' +
-                        '<span class="price-a">Price | $ ' + opt_data[i].price + '</span>' +
-                        '</div>' +
-                        '<a href="/theaters/' +
-                        opt_data[i].id +
-                        '/" class="link-a">Click here to view' +
-                        '<span class="ion-ios-arrow-forward"></span>' +
-                        '</a>' +
-                        '</div>' +
-                        '<div class="card-footer-a">' +
-                        '<ul class="card-info d-flex justify-content-around">' +
-                        '<li>' +
-                        '<h4 class="card-info-title">기간</h4>' +
-                        '<span>' + opt_data[i].period + '</span>' +
-                        '</li>' +
-                        '<li>' +
-                        '<h4 class="card-info-title">장소</h4>' +
-                        '<span>' + opt_data[i].place + '</span>' +
-                        '</li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>'
+                        <!-- html code -->
                     );
                 }
             }
         });
     });
 });
-```
-
-<br>
-
-- **Search**
-
-> views
-
-```Python
-from django.shortcuts import render
-from Theater_Information_Guide.models import TheatersDetails
-from django.db.models import Q
-
-
-def search(request):
-    user_input = request.GET['user_input']
-    location = request.GET['location']
-    type = request.GET['type']
-
-    theaters_data = TheatersDetails.objects.select_related().all()
-
-    theaters_data = theaters_data.filter(
-        Q(theaterid__theatername__icontains=user_input) &
-        Q(theaterid__location__icontains=location) &
-        Q(theaterid__openrun__icontains=type)
-    )
-
-    search_data = []
-    for i in theaters_data:
-        data_dict = dict()
-        data_dict['id'] = i.theaterid.theaterid
-        data_dict['name'] = i.theaterid.theatername
-        data_dict['price'] = i.price
-        data_dict['period'] = i.theaterid.period
-        data_dict['place'] = i.theaterid.place
-        data_dict['image'] = i.image
-        search_data.append(data_dict)
-    context = {
-        'search_data': search_data
-    }
-    return render(request, "search.html", context)
-```
-
-<br>
-
-- **urls**
-
-```Python
-from django.urls import path
-from . import views
-
-
-urlpatterns = [
-    path('', views.index, name="index"),
-    path('theaters/', views.theaters_index, name="theaters_index"),
-    path('theaters/<int:pk>/', views.theaters_detail, name="theaters_detail"),
-    path('developer/', views.developer, name="developer"),
-    path('change_option/', views.change_option, name="change_option"),
-    path('change_page/', views.change_page, name="change_page"),
-    path('search/', views.search, name="search"),
-]
 ```
 
 <br>
