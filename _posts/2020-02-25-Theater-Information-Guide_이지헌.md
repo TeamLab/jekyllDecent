@@ -266,7 +266,7 @@ print('웹 크롤링이 완료되었습니다.')
 
 ![index](https://user-images.githubusercontent.com/48443734/73118522-a724b100-3f98-11ea-917b-df5f9773262b.PNG)
 ![index_under](https://user-images.githubusercontent.com/48443734/73118523-a7bd4780-3f98-11ea-90d5-97f1392a6202.PNG)
-![theater](https://user-images.githubusercontent.com/48443734/73118524-a7bd4780-3f98-11ea-8b8c-5d909d14874c.PNG
+![theater](https://user-images.githubusercontent.com/48443734/73118524-a7bd4780-3f98-11ea-8b8c-5d909d14874c.PNG)
 
 <br>
 
@@ -360,10 +360,8 @@ CREATE TABLE comments(
 > views
 
 ```Python
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from Theater_Information_Guide.models import TheatersDetails
-from django.http import JsonResponse
-from django.db.models import Q
 
 
 def theaters_index(request):
@@ -376,60 +374,15 @@ def theaters_index(request):
 
 <br>
 
-> Theaters_index html
-
-```html
-{% for data in theaters_data %}
-    <div class="col-md-4" id="theater_body">
-        <div class="card-box-a card-shadow">
-            <div class="img-box-a">
-                <img src="{% static data.image %}" alt="" class="img-a img-fluid">
-            </div>
-            <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                        <h2 class="card-title-a">
-                            <a>{{ data.theaterid.theaterid }}위
-                                <br/> {{ data.theaterid.theatername }}</a>
-                        </h2>
-                    </div>
-                    <div class="card-body-a">
-                        <div class="price-box d-flex">
-                            <span class="price-a">Price | $ {{ data.price }}</span>
-                        </div>
-                        <a href="{% url 'theaters_detail' pk=data.pk %}" class="link-a">Click here to
-                            view
-                            <span class="ion-ios-arrow-forward"></span>
-                        </a>
-                    </div>
-                    <div class="card-footer-a">
-                        <ul class="card-info d-flex justify-content-around">
-                            <li>
-                                <h4 class="card-info-title">기간</h4>
-                                <span>{{ data.theaterid.period }}
-      </span>
-                            </li>
-                            <li>
-                                <h4 class="card-info-title">장소</h4>
-                                <span>{{ data.theaterid.place }}
-      </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endfor %}
-```
-
-<br>
-
 - **change_option, change_page**
 
 > views
 
 ```Python
+from Theater_Information_Guide.models import TheatersDetails
+from django.http import JsonResponse
+
+
 def change_option(request):
     option = request.GET['option']
 
@@ -670,6 +623,11 @@ $(document).ready(function () {
 > views
 
 ```Python
+from django.shortcuts import render
+from Theater_Information_Guide.models import TheatersDetails
+from django.db.models import Q
+
+
 def search(request):
     user_input = request.GET['user_input']
     location = request.GET['location']
@@ -693,7 +651,6 @@ def search(request):
         data_dict['place'] = i.theaterid.place
         data_dict['image'] = i.image
         search_data.append(data_dict)
-    print(search_data)
     context = {
         'search_data': search_data
     }
@@ -707,6 +664,7 @@ def search(request):
 ```Python
 from django.urls import path
 from . import views
+
 
 urlpatterns = [
     path('', views.index, name="index"),
