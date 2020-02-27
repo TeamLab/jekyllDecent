@@ -266,7 +266,7 @@ print('웹 크롤링이 완료되었습니다.')
 
 ![index](https://user-images.githubusercontent.com/48443734/73118522-a724b100-3f98-11ea-917b-df5f9773262b.PNG)
 ![index_under](https://user-images.githubusercontent.com/48443734/73118523-a7bd4780-3f98-11ea-90d5-97f1392a6202.PNG)
-![theater](https://user-images.githubusercontent.com/48443734/73118524-a7bd4780-3f98-11ea-8b8c-5d909d14874c.PNG)
+![theater_detail](https://user-images.githubusercontent.com/48443734/73118524-a7bd4780-3f98-11ea-8b8c-5d909d14874c.PNG)
 
 <br>
 
@@ -352,90 +352,6 @@ CREATE TABLE comments(
 
 4. Django로 Mysql과 연동하여 Database와 Front-end를 연결 후 Django Form을 이용하여 검색 기능을 구현하고 Pagination, 인기순, 최신순과 같은 각 기능들을 구현하기 위한 jQuery ajax 코드를 작성합니다. 전체적인 코드는 아래 링크에서 자세하게 확인할 수 있습니다.
 > https://github.com/Jiheon-Lee/teamlab_2019_winter/tree/master/Week_5
-
-## Django project code
-
-- **Change option**
-
-> jQuery ajax
-
-```javascript
-$(document).ready(function () {
-    $('#sort-select').change(function () {
-        var option = $("#sort-select option:selected").val();
-        var active = $("ul>li");
-        active.removeClass('active');
-        $('#page-01').addClass('active');
-        $.ajax({
-            url: '/change_option/',
-            data: {option: option},
-            success: function (data) {
-                var opt_data = data.theater_data;
-                var num = data.theater_data.length;
-                $("div").remove("#theater_body");
-                for (var i = 0; i < num; i++) {
-                    $("#change-option").append(
-                        <!-- html code -->
-                    );
-                }
-            }
-        });
-    });
-});
-```
-
-- **Pagination**
-
-```javascript
-$(document).ready(function () {
-    $(".page-item").on("click", function () {
-
-        var pre_data = $(".page-item.active ").attr("id");
-        var cli_data = $(this).attr("id");
-
-        var option = $("#sort-select option:selected").val();
-        var active = $("ul>li");
-        active.removeClass('active');
-
-        if (cli_data == "page-previous") {
-            if (pre_data == "page-03") {
-                var page = "page-02"
-            } else {
-                var page = "page-01"
-            }
-        } else if (cli_data == "page-next") {
-            if (pre_data == "page-01"
-            ) {
-                var page = "page-02";
-            } else {
-                var page = "page-03";
-            }
-        } else {
-            var page = cli_data;
-        }
-        $("#" + page).addClass('active');
-
-
-        $.ajax({
-            url: '/change_page/',
-            data: {
-                page: page,
-                option: option,
-            },
-            success: function (data) {
-                var opt_data = data.theater_data;
-                var num = data.theater_data.length;
-                $("div").remove("#theater_body");
-                for (var i = 0; i < num; i++) {
-                    $("#change-option").append(
-                        <!-- html code -->
-                    );
-                }
-            }
-        });
-    });
-});
-```
 
 <br>
 
